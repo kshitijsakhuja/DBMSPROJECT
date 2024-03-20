@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/5479b044dc.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo-details">
+        <img src="logo.png" alt="logo">
+        <span class="logo_name">CureConnect</span>
+      </div>
+      <ul class="nav-links">
+        <li>
+          <a href="#" >
+            <i class="bx bx-grid-alt"></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-users"></i>
+            <span class="links_name">Search Patients</span>
+          </a>
+          </li>
+          <hr>
+        <li>
+          <a href="#">
+            <i class="fa-regular fa-calendar-plus"></i>
+            <span class="links_name">Manage Appointments</span>
+          </a>
+          </li>
+          <hr>
+        <li>
+          <a href="#">
+            <i class="fa-regular fa-calendar-check"></i>
+            <span class="links_name">Appointments History</span>
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="#">
+            <i class="fa-regular fa-circle-question"></i>
+            <span class="links_name">Support</span>
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-circle-user"></i>
+            <span class="links_name">Manage Profile</span>
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="#">
+            <i class="bx bx-cog"></i>
+            <span class="links_name">Settings</span>
+          </a>
+        </li>
+        <hr>
+        <li class="log_out">
+          <a href="#">
+            <i class="bx bx-log-out"></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <section class="home-section">
+      <nav>
+        <div class="sidebar-button">
+          <i class="bx bx-menu sidebarBtn"></i>
+          <span class="dashboard">Dashboard</span>
+        </div>
+        <div class="search-box">
+          <input type="text" placeholder="Search Patients..." />
+          <i class="bx bx-search"></i>
+        </div>
+        <button class="profile-details dropbtn dropdown" onclick="toggleDropdown()">
+          <i class="fa-solid fa-user-large"></i>
+          <span class="admin_name">Anuj Kumar</span>
+          <i class="bx bx-chevron-down"></i>
+        </button>
+        <div id="myDropdown" class="dropdown-content">
+          <div class="dropdown-item">
+            <a href="#"><i class="fa-solid fa-user"></i>Manage Profile</a>
+            <hr>
+          </div>
+          <div class="dropdown-item">
+            <a href="#"><i class="fa-solid fa-gear"></i>Settings</a>
+            <hr>
+          </div>
+          <div class="dropdown-item">
+            <a href="#"><i class="fa-solid fa-key"></i>Change Password</a>
+            <hr>
+          </div>
+        </div>
+        
+        
+        
+      </nav>
+
+      <div class="home-content">
+        
+        
+              <div class="box-container">
+                  <a href="">
+                      <div class="box">
+                        <i class="fa-solid fa-users fa-7x"></i>
+                      <h3>Search Patients</h3>  
+                  </div>
+                  </a>   
+                  <a href="">
+                      <div class="box">
+                        <i class="fa-regular fa-calendar-plus fa-7x"></i>
+                      <h3>Manage Appointments</h3>        
+                  </div>
+                  </a>           
+                  <a href="">
+                      <div class="box">
+                        <i class="fa-regular fa-calendar-check fa-7x"></i>
+                      <h3>My Appointments</h3>        
+                  </div>
+                  </a>
+                  <a href="">
+                    <div class="box">
+                      <i class="fa-solid fa-circle-user fa-7x"></i>
+                    <h3>Manage Profile</h3>   
+                </div>
+                </a>         
+                  <a href="">
+                      <div class="box">
+                        <i class="fa-solid fa-circle-question fa-7x"></i>
+                      <h3>Support</h3>    
+                  </div>
+                  </a>     
+              </div>
+    <script>
+      let sidebar = document.querySelector(".sidebar");
+      let sidebarBtn = document.querySelector(".sidebarBtn");
+      sidebarBtn.onclick = function () {
+        sidebar.classList.toggle("active");
+        if (sidebar.classList.contains("active")) {
+          sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      };
+    </script>
+  </body>
+</html>
