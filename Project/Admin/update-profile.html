@@ -2,14 +2,12 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
-    <title>CureConnect</title>
+    <title>Home</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://kit.fontawesome.com/5479b044dc.js" crossorigin="anonymous"></script>
     <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="script.js"></script>
-
-
   </head>
   <body onload="onload()">
     <div class="sidebar">
@@ -19,51 +17,58 @@
       </div>
       <ul class="nav-links">
         <li>
-          <a href="index.html" class="active" >
+          <a href="index.html" >
             <i class="bx bx-grid-alt"></i>
             <span class="links_name">Dashboard</span>
           </a>
         </li>
         <hr>
         <li>
-          <a href="#">
+          <a href="doctors.html">
             <i class="fa-solid fa-user-doctor"></i>
-            <span class="links_name">Search Doctors</span>
+            <span class="links_name">Doctors</span>
           </a>
           </li>
           <hr>
         <li>
-          <a href="book-appointment.html" class="something">
-            <i class="fa-solid fa-calendar-plus"></i>
-            <span class="links_name">Book Appointment</span>
-          </a>
-          </li>
-          <hr>
-        <li>
-          <a href="appointments-history.html">
-            <i class="fa-solid fa-calendar-check"></i>
-            <span class="links_name">Appointments History</span>
+          <a href="patients.html">
+            <i class="fa-solid fa-bed"></i>
+            <span class="links_name">Patients</span>
           </a>
         </li>
         <hr>
         <li>
-          <a href="medical-history.html">
-            <i class="fa-solid fa-file-medical"></i>
-            <span class="links_name">Medical History</span>
+          <a href="appointments.html">
+            <i class="fa-regular fa-calendar-check"></i>
+            <span class="links_name">Appointments</span>
           </a>
         </li>
         <hr>
         <li>
-          <a href="contact-us.html" class="">
+          <a href="queries.html">
             <i class="fa-regular fa-circle-question"></i>
-            <span class="links_name">Raise Queries</span>
+            <span class="links_name">Queries</span>
           </a>
         </li>
         <hr>
         <li>
-          <a href="manage-profile.html">
-            <i class="fa-solid fa-circle-user"></i>
-            <span class="links_name">Manage Profile</span>
+          <a href="session-logs.html">
+            <i class="fa-solid fa-list-ul"></i>
+            <span class="links_name">Session logs</span>
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="report.html">
+            <i class="fa-solid fa-file-lines"></i>
+            <span class="links_name">Reports</span>
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="pages.html">
+            <i class="fa-regular fa-file"></i>
+            <span class="links_name">Pages</span>
           </a>
         </li>
         <hr>
@@ -89,7 +94,7 @@
           <span class="dashboard">Dashboard</span>
         </div>
         <div class="search-box">
-          <input type="text" placeholder="Search Doctors..." />
+          <input type="text" placeholder="Search Users..." />
           <i class="bx bx-search"></i>
         </div>
         <button class="profile-details dropbtn dropdown" onclick="toggleDropdown()">
@@ -107,76 +112,56 @@
             <hr>
           </div>
           <div class="dropdown-item">
-            <a href="patient_reset.html"><i class="fa-solid fa-key"></i>Change Password</a>
+            <a href="#"><i class="fa-solid fa-key"></i>Change Password</a>
             <hr>
           </div>
         </div>
+        
+        
+        
       </nav>
 
       <div class="home-content">
-        <div class="main">
-          <div class="main-head">
-            <h2>Appointments History</h2><br><hr><br><br>
-            <a href="book-appointment.html"><button><i class="fa-solid fa-plus"></i>Add Appointment</button></a>
-          </div>
-          <div class="table-container">
-
-<table>
-  <tr>
-    <th>Appointment ID</th>
-    <th>Patient Name</th>
-    <th>Doctor Name</th>
-    <th>Appointment DateTime</th>
-    <th>Creation DateTime</th>
-    <th>Status</th>
-    <th>Action</th>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>John Doe</td>
-    <td>Dr. Smith</td>
-    <td>2024-03-20 10:00 AM</td>
-    <td>2024-03-15 08:30 AM</td>
-    <td class="status completed">Confirmed</td>
-    <td>
-      <button class="edit"><i class="fas fa-pen"></i></button>
-      <button class="delete"><i class="fas fa-trash-can"></i></button>
-    </td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>Jane Smith</td>
-    <td>Dr. Johnson</td>
-    <td>2024-03-21 02:30 PM</td>
-    <td>2024-03-16 09:45 AM</td>
-    <td class="status pending">Pending</td>
-    <td>
-      <button class="edit"><i class="fas fa-pen"></i></button>
-      <button class="delete"><i class="fas fa-trash-can"></i></button>
-    </td>
-  </tr>
-  <tr>
-    <td>3</td>
-    <td>Michael Brown</td>
-    <td>Dr. Lee</td>
-    <td>2024-03-22 11:15 AM</td>
-    <td>2024-03-17 10:20 AM</td>
-    <td class="status completed">Confirmed</td>
-    <td>
-      <button class="edit"><i class="fas fa-pen"></i></button>
-      <button class="delete"><i class="fas fa-trash-can"></i></button>
-    </td>
-  </tr>
-  <!-- Include more rows as needed -->
-</table>
-
-
-
-
-</div>
-        </div>
-      </div>
-
+        
+        
+              <div class="main ">
+                <div class="profile-container">
+                <div class="update-profile-form">
+                  <h2>Update Profile</h2><br><hr><br><br>
+                  <form id="updateProfileForm">
+              <div class="form-group">
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Your full name..">
+              </div><br>
+              <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" placeholder="Your address..">
+              </div><br>
+              <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" placeholder="Your City">
+              </div><br>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your email..">
+              </div><br>
+              <div class="form-group">
+                <label for="gender">Gender:</label>
+                <div class="radio-buttons">
+                  <input type="radio" id="female" name="gender" value="female" checked >
+                  <label for="female">Female</label>
+                  <input type="radio" id="male" name="gender" value="male">
+                  <label for="male">Male</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <a href="manage-profile.html"><button type="button" id="saveButton">Save</button></a>
+              </div>
+            </form>
+                  </div>
+                </div>
+              </div>
+              </div>
     <script>
       let sidebar = document.querySelector(".sidebar");
       let sidebarBtn = document.querySelector(".sidebarBtn");

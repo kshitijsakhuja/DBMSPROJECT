@@ -124,50 +124,56 @@
       <div class="home-content">
         
         
-              <div class="box-container">
-                  <a href="">
-                      <div class="box">
-                        <i class="fa-solid fa-users fa-7x"></i>
-                      <h3>Manage Patients</h3>  
-                      <h6>Total Patients: 2</h6>       
-                  </div>
-                  </a>
-                  <a href="#">
-                      <div class="box">
-                        <i class="fa-solid fa-user-doctor fa-7x"></i>
-                      <h3>Manage Doctors</h3>
-                      <h6>Total Doctors: 2</h6>         
-                  </div>
-                  </a>
+              <div class="main ">
+                <div class="book-appointment-container">
                   
-                  <a href="">
-                      <div class="box">
-                        <i class="fa-solid fa-calendar-check fa-7x"></i>
-                      <h3>Appointments</h3>
-                      <h6>Total Appointments: 2</h6>         
+                
+                <div class="appointment-form">
+                  <h2>Add Doctor</h2><br><hr><br><br>
+                  <form id="addDoctorForm">
+                    <div class="form-group">
+                        <label for="specialization">Doctor Specialization:</label>
+                        <select id="specialization" name="specialization" required>
+                            <option value="">Select Specialization</option>
+                            <!-- Options for Specialization will be dynamically populated -->
+                        </select>
+                    </div><br>
+                    <div class="form-group">
+                        <label for="name">Doctor Name:</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter Doctor Name">
+                    </div><br>
+                    <div class="form-group">
+                        <label for="clinicAddress">Doctor Clinic Address:</label>
+                        <textarea id="clinicAddress" name="clinicAddress" placeholder="Enter Doctor Clinic Address" required></textarea>
+                    </div><br>
+                    <div class="form-group">
+                        <label for="consultancyFees">Doctor Consultancy Fees:</label>
+                        <input type="text" id="consultancyFees" name="consultancyFees" placeholder="Enter Doctor Consultancy Fees" required>
+                    </div><br>
+                    <div class="form-group">
+                        <label for="contactNo">Doctor Contact No:</label>
+                        <input type="text" id="contactNo" name="contactNo" placeholder="Enter Doctor Contact No" required>
+                    </div><br>
+                    <div class="form-group">
+                        <label for="email">Doctor Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Enter Doctor Email" required>
+                    </div><br>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required placeholder="Enter Password">
+                    </div><br>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password:</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
+                    </div><br>
+                    <div class="form-group">
+                        <button type="submit">Add Doctor</button>
+                    </div>
+                </form>
+
                   </div>
-                  </a>
-                  <a href="">
-                      <div class="box">
-                        <i class="fa-solid fa-circle-question fa-7x"></i>
-                      <h3>Answer Queries</h3>      
-                      <h6>Unread Queries: 2</h6>  
-                  </div>
-                  </a>
-                  <a href="">
-                      <div class="box">
-                        <i class="fa-solid fa-file-lines fa-7x"></i>
-                      <h3>Generate Reports</h3>   
-                      <h6>Last Generated On: 23-03-2024</h6>    
-                  </div>
-                  </a>    
-                  <a href="">
-                    <div class="box">
-                      <i class="fa-solid fa-file-lines fa-7x"></i>
-                    <h3>Manage Pages</h3>   
-                    <h6>Last Updated On: 23-03-2024</h6>    
                 </div>
-                </a>            
+              </div>
               </div>
     <script>
       let sidebar = document.querySelector(".sidebar");
