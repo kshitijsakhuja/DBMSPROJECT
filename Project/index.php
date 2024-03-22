@@ -80,7 +80,7 @@
         <div class="dropdown-content">
             <a href="#">English</a>
             <a href="#">Hindi</a>
-            <a href="lang/malayam.php">Malayalam</a>
+            <a href="../lang/malayam.php">Malayalam</a>
         </div>
     </li>
             <li class="hideOnMobile"><a href="Patient/Patient_login.html" class="btn"><button class="book">Log&nbspin</button></a></li>
@@ -92,7 +92,7 @@
         <div class="container">
             <h1>CureConnect</h1>
             <p>Empowering Health, Connecting Lives</p>
-            <a href="user-login.html" class="btn"><button class="book">Book&nbspAppointment&nbsp<i class="fa-solid fa-arrow-right"></i></button></a>
+            <a href="Patient/Patient_login.html" class="btn"><button class="book">Book&nbspAppointment&nbsp<i class="fa-solid fa-arrow-right"></i></button></a>
         </div>
                 
             
@@ -200,30 +200,30 @@
     <section id="contact-us">
         <div class="contact-container">
         <div class="text">Contact us</div>
-        <form action="#">
+        <form action="contactus.php" method="post">
            <div class="form-row">
               <div class="input-data">
-                 <input type="text" required>
+                 <input type="text" name="firstname"required>
                  <label for="">First Name</label>
               </div>
               <div class="input-data">
-                 <input type="text" required>
+                 <input type="text" name="lastname"required>
                  <label for="">Last Name</label>
               </div>
            </div>
            <div class="form-row">
               <div class="input-data">
-                 <input type="text" required>
+                 <input type="text" name="email"required>
                  <label for="">Email Address</label>
               </div>
               <div class="input-data">
-                 <input type="text" required>
+                 <input type="text"name="subject" required>
                  <label for="">Subject</label>
               </div>
            </div>
            <div class="form-row">
               <div class="input-data textarea">
-                 <textarea rows="8" cols="80" required></textarea>
+                 <textarea rows="8" cols="80" name="message"required></textarea>
                  <br />
                  <label for="">Write your message</label>
                  <br />
@@ -247,12 +247,12 @@
           <ul class="links">
             <li><a href="">Home</a></li>
             <li><a href="#Departments">Departments</a></li>
-            <li><a href="user-login.html">Book Appointment</a></li>
+            <li><a href="Patient/Patient_login.html">Book Appointment</a></li>
             <li><a href="">Forum</a></li>
             <li><a href="#about-us">About Us</a></li>
             <li><a href="#contact-us">Contact Us</a></li>
             <li><a href="#logins">Login</a></li>
-            <li><a href="register.html">Sign Up</a></li>
+            <li><a href="Patient/patient_registration.html">Sign Up</a></li>
           </ul>
         </div>
         <div class="footer-col">
