@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="script.js"></script>
   </head>
-  <body>
+  <body onload="onload()">
     <div class="sidebar">
       <div class="logo-details">
         <img src="logo.png" alt="logo">
@@ -17,7 +17,7 @@
       </div>
       <ul class="nav-links">
         <li>
-          <a href="#" >
+          <a href="index.html" >
             <i class="bx bx-grid-alt"></i>
             <span class="links_name">Dashboard</span>
           </a>
@@ -31,42 +31,42 @@
           </li>
           <hr>
         <li>
-          <a href="#">
+          <a href="manage-appointment.html">
             <i class="fa-regular fa-calendar-plus"></i>
             <span class="links_name">Manage Appointments</span>
           </a>
           </li>
           <hr>
         <li>
-          <a href="#">
+          <a href="appointments-history.html">
             <i class="fa-regular fa-calendar-check"></i>
             <span class="links_name">Appointments History</span>
           </a>
         </li>
         <hr>
         <li>
-          <a href="#">
+          <a href="contact-us.html">
             <i class="fa-regular fa-circle-question"></i>
             <span class="links_name">Support</span>
           </a>
         </li>
         <hr>
         <li>
-          <a href="#">
+          <a href="manage-profile.html">
             <i class="fa-solid fa-circle-user"></i>
             <span class="links_name">Manage Profile</span>
           </a>
         </li>
         <hr>
         <li>
-          <a href="#">
+          <a href="settings.html">
             <i class="bx bx-cog"></i>
             <span class="links_name">Settings</span>
           </a>
         </li>
         <hr>
         <li class="log_out">
-          <a href="#">
+          <a href="logout.php">
             <i class="bx bx-log-out"></i>
             <span class="links_name">Log out</span>
           </a>
@@ -90,15 +90,15 @@
         </button>
         <div id="myDropdown" class="dropdown-content">
           <div class="dropdown-item">
-            <a href="#"><i class="fa-solid fa-user"></i>Manage Profile</a>
+            <a href="manage-profile.html"><i class="fa-solid fa-user"></i>Manage Profile</a>
             <hr>
           </div>
           <div class="dropdown-item">
-            <a href="#"><i class="fa-solid fa-gear"></i>Settings</a>
+            <a href="settings.html"><i class="fa-solid fa-gear"></i>Settings</a>
             <hr>
           </div>
           <div class="dropdown-item">
-            <a href="#"><i class="fa-solid fa-key"></i>Change Password</a>
+            <a href="doctor_reset.html"><i class="fa-solid fa-key"></i>Change Password</a>
             <hr>
           </div>
         </div>
@@ -117,25 +117,25 @@
                       <h3>Search Patients</h3>  
                   </div>
                   </a>   
-                  <a href="">
+                  <a href="manage-appointment.html">
                       <div class="box">
                         <i class="fa-regular fa-calendar-plus fa-7x"></i>
                       <h3>Manage Appointments</h3>        
                   </div>
                   </a>           
-                  <a href="">
+                  <a href="appointments-history.html">
                       <div class="box">
                         <i class="fa-regular fa-calendar-check fa-7x"></i>
                       <h3>My Appointments</h3>        
                   </div>
                   </a>
-                  <a href="">
+                  <a href="manage-profile.html">
                     <div class="box">
                       <i class="fa-solid fa-circle-user fa-7x"></i>
                     <h3>Manage Profile</h3>   
                 </div>
                 </a>         
-                  <a href="">
+                  <a href="contact-us.html">
                       <div class="box">
                         <i class="fa-solid fa-circle-question fa-7x"></i>
                       <h3>Support</h3>    

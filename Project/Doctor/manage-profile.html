@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
-    <title>CureConnect</title>
+    <title>Home</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://kit.fontawesome.com/5479b044dc.js" crossorigin="anonymous"></script>
     <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
@@ -17,7 +17,7 @@
       </div>
       <ul class="nav-links">
         <li>
-          <a href="index.html" class="active" >
+          <a href="index.html" >
             <i class="bx bx-grid-alt"></i>
             <span class="links_name">Dashboard</span>
           </a>
@@ -25,36 +25,29 @@
         <hr>
         <li>
           <a href="#">
-            <i class="fa-solid fa-user-doctor"></i>
-            <span class="links_name">Search Doctors</span>
+            <i class="fa-solid fa-users"></i>
+            <span class="links_name">Search Patients</span>
           </a>
           </li>
           <hr>
         <li>
-          <a href="book-appointment.html" class="something">
-            <i class="fa-solid fa-calendar-plus"></i>
-            <span class="links_name">Book Appointment</span>
+          <a href="manage-appointment.html">
+            <i class="fa-regular fa-calendar-plus"></i>
+            <span class="links_name">Manage Appointments</span>
           </a>
           </li>
           <hr>
         <li>
           <a href="appointments-history.html">
-            <i class="fa-solid fa-calendar-check"></i>
+            <i class="fa-regular fa-calendar-check"></i>
             <span class="links_name">Appointments History</span>
           </a>
         </li>
         <hr>
         <li>
-          <a href="medical-history.html">
-            <i class="fa-solid fa-file-medical"></i>
-            <span class="links_name">Medical History</span>
-          </a>
-        </li>
-        <hr>
-        <li>
-          <a href="contact-us.html" class="">
+          <a href="contact-us.html">
             <i class="fa-regular fa-circle-question"></i>
-            <span class="links_name">Raise Queries</span>
+            <span class="links_name">Support</span>
           </a>
         </li>
         <hr>
@@ -87,7 +80,7 @@
           <span class="dashboard">Dashboard</span>
         </div>
         <div class="search-box">
-          <input type="text" placeholder="Search Doctors..." />
+          <input type="text" placeholder="Search Patients..." />
           <i class="bx bx-search"></i>
         </div>
         <button class="profile-details dropbtn dropdown" onclick="toggleDropdown()">
@@ -105,7 +98,7 @@
             <hr>
           </div>
           <div class="dropdown-item">
-            <a href="patient_reset.html "><i class="fa-solid fa-key"></i>Change Password</a>
+            <a href="doctor_reset.html"><i class="fa-solid fa-key"></i>Change Password</a>
             <hr>
           </div>
         </div>
@@ -119,36 +112,38 @@
         
               <div class="main ">
                 <div class="profile-container">
+                  
+                
                 <div class="update-profile-form">
-                  <h2>Update Profile</h2><br><hr><br><br>
-                  <form id="updateProfileForm" action="#" method="post">
+                  <h2>Manage Profile</h2><br><hr><br><br>
+                  <form id="updateProfileForm">
               <div class="form-group">
                 <label for="fullname">Full Name:</label>
-                <input type="text" id="fullname" name="fullname" placeholder="Your full name..">
+                <input type="text" id="fullname" name="fullname" placeholder="Your full name.." readonly>
               </div><br>
               <div class="form-group">
                 <label for="address">Address:</label>
-                <input type="text" id="address" name="address" placeholder="Your address..">
+                <input type="text" id="address" name="address" placeholder="Your address.." readonly>
               </div><br>
               <div class="form-group">
                 <label for="city">City:</label>
-                <input type="text" id="city" name="city" placeholder="Your City">
+                <input type="text" id="city" name="city" placeholder="Your City" readonly>
               </div><br>
               <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Your email..">
+                <input type="email" id="email" name="email" placeholder="Your email.." readonly>
               </div><br>
               <div class="form-group">
                 <label for="gender">Gender:</label>
                 <div class="radio-buttons">
-                  <input type="radio" id="female" name="gender" value="female" checked >
+                  <input type="radio" id="female" name="gender" value="female" checked disabled>
                   <label for="female">Female</label>
-                  <input type="radio" id="male" name="gender" value="male">
+                  <input type="radio" id="male" name="gender" value="male" disabled>
                   <label for="male">Male</label>
                 </div>
               </div>
               <div class="form-group">
-              <button type="submit" id="saveButton">Save</button>
+                <a href="update-profile.html"><button type="button" id="updateButton" >Update</button></a>
               </div>
             </form>
                   </div>
