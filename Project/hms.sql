@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 23, 2024 at 04:28 AM
+-- Generation Time: Mar 29, 2024 at 09:28 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -31,15 +31,16 @@ CREATE TABLE `admin` (
   `id` int(11) NOT NULL,
   `admin_email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `updationDate` varchar(255) NOT NULL
+  `updationDate` varchar(255) NOT NULL,
+  `logout` varchar(255) DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `admin_email`, `password`, `updationDate`) VALUES
-(1, 'admin', 'Test@12345', '30-10-2022 11:42:05 AM');
+INSERT INTO `admin` (`id`, `admin_email`, `password`, `updationDate`, `logout`) VALUES
+(1, 'admin', 'Test@12345', '30-10-2022 11:42:05 AM', '2024-03-29 13:49:54');
 
 -- --------------------------------------------------------
 
@@ -69,7 +70,8 @@ CREATE TABLE `appointment` (
 INSERT INTO `appointment` (`id`, `doctorSpecialization`, `doctorId`, `doctor`, `userId`, `consultancyFees`, `appointmentDate`, `appointmentTime`, `postingDate`, `userStatus`, `doctorStatus`, `updationDate`) VALUES
 (1, 'ENT', 1, '', 1, 500, '2022-11-10', '12:45 PM', '2022-11-06 12:21:48', 1, 0, '2022-11-06 12:23:35'),
 (2, 'ENT', 1, '', 2, 500, '2022-11-17', '7:00 PM', '2022-11-06 13:16:18', 1, 1, NULL),
-(5, 'dermatology', NULL, 'dr-jones', NULL, 0, '2024-03-28', '03:18', '2024-03-21 05:48:57', NULL, NULL, NULL);
+(5, 'dermatology', NULL, 'dr-jones', NULL, 0, '2024-03-28', '03:18', '2024-03-21 05:48:57', NULL, NULL, NULL),
+(6, 'cardiology', NULL, 'dr-jones', NULL, 0, '2024-03-15', '01:00', '2024-03-27 17:27:43', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -97,7 +99,8 @@ CREATE TABLE `doctors` (
 INSERT INTO `doctors` (`id`, `specialization`, `doctorName`, `address`, `docFees`, `contactno`, `docEmail`, `password`, `creationDate`, `updationDate`) VALUES
 (1, 'ENT', 'Anuj kumar', 'A 123 XYZ Apartment Raj Nagar Ext Ghaziabad', '500', 142536250, 'anujk123@test.com', 'f925916e2754e5e03f75dd58a5733251', '2022-10-30 18:16:52', '2022-11-06 13:20:17'),
 (2, 'Endocrinologists', 'Charu Dua', 'X 1212 ABC Apartment Laxmi Nagar New Delhi ', '800', 1231231230, 'charudua12@test.com', 'f925916e2754e5e03f75dd58a5733251', '2022-11-04 01:06:41', NULL),
-(5, 'Gastroenterology', 'Kshitij Sakhuja ', 'hhhhh', '200', 1234567890, 'edwin123@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2024-03-22 18:15:23', NULL);
+(5, 'Gastroenterology', 'Kshitij Sakhuja ', 'hhhhh', '200', 1234567890, 'edwin123@gmail.com', 'f925916e2754e5e03f75dd58a5733251', '2024-03-22 18:15:23', NULL),
+(8, 'Endocrinology', 'Anu Sakhuja', 'Chandrapura', '500', 7479471568, 'anusakhuja63@gmail.com', 'c1a1d871614700095d39681cbb291103', '2024-03-29 08:04:22', '2024-03-29 08:04:22');
 
 -- --------------------------------------------------------
 
@@ -147,7 +150,7 @@ INSERT INTO `doctorslog` (`id`, `uid`, `username`, `userip`, `loginTime`, `logou
 
 CREATE TABLE `doctorspecilization` (
   `id` int(11) NOT NULL,
-  `specilization` varchar(255) DEFAULT NULL,
+  `specialization` varchar(255) DEFAULT NULL,
   `creationDate` timestamp NULL DEFAULT current_timestamp(),
   `updationDate` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
@@ -156,7 +159,7 @@ CREATE TABLE `doctorspecilization` (
 -- Dumping data for table `doctorspecilization`
 --
 
-INSERT INTO `doctorspecilization` (`id`, `specilization`, `creationDate`, `updationDate`) VALUES
+INSERT INTO `doctorspecilization` (`id`, `specialization`, `creationDate`, `updationDate`) VALUES
 (1, 'Orthopedics', '2022-10-30 18:09:46', NULL),
 (2, 'Internal Medicine', '2022-10-30 18:09:57', NULL),
 (3, 'Obstetrics and Gynecology', '2022-10-30 18:10:18', NULL),
@@ -171,7 +174,8 @@ INSERT INTO `doctorspecilization` (`id`, `specilization`, `creationDate`, `updat
 (12, 'Dental Care', '2022-10-30 18:11:39', NULL),
 (13, 'Dermatologists', '2022-10-30 18:12:02', NULL),
 (14, 'Endocrinologists', '2022-10-30 18:12:10', NULL),
-(15, 'Neurologists', '2022-10-30 18:12:30', NULL);
+(15, 'Neurologists', '2022-10-30 18:12:30', NULL),
+(19, 'Physician ', '2024-03-29 08:07:03', '2024-03-29 08:07:03');
 
 -- --------------------------------------------------------
 
@@ -197,8 +201,7 @@ CREATE TABLE `tblcontactus` (
 
 INSERT INTO `tblcontactus` (`id`, `firstname`, `lastname`, `email`, `contactno`, `subject`, `message`, `PostingDate`, `LastupdationDate`) VALUES
 (1, '', '', 'anujk30@test.com', 1425362514, '', 'This is for testing purposes.   This is for testing purposes.This is for testing purposes.This is for testing purposes.This is for testing purposes.This is for testing purposes.This is for testing purposes.This is for testing purposes.This is for testing purposes.', '2022-10-30 16:52:03', NULL),
-(2, '', '', 'ak@gmail.com', 1111122233, '', 'This is for testing', '2022-11-06 13:13:41', '2022-11-06 13:13:57'),
-(22, 'Kshitij ', 'Sakhuja ', 'kshitij.sakhuja@bca.christuniversity.in', 7479471568, 'll', 'sxdcfghjkl', '2024-03-22 13:55:59', NULL);
+(2, '', '', 'ak@gmail.com', 1111122233, '', 'This is for testing', '2022-11-06 13:13:41', '2022-11-06 13:13:57');
 
 -- --------------------------------------------------------
 
@@ -208,7 +211,7 @@ INSERT INTO `tblcontactus` (`id`, `firstname`, `lastname`, `email`, `contactno`,
 
 CREATE TABLE `tblmedicalhistory` (
   `ID` int(10) NOT NULL,
-  `PatientID` int(10) DEFAULT NULL,
+  `PatientID` int(10) NOT NULL,
   `BloodPressure` varchar(200) DEFAULT NULL,
   `BloodSugar` varchar(200) NOT NULL,
   `Weight` varchar(100) DEFAULT NULL,
@@ -223,8 +226,10 @@ CREATE TABLE `tblmedicalhistory` (
 
 INSERT INTO `tblmedicalhistory` (`ID`, `PatientID`, `BloodPressure`, `BloodSugar`, `Weight`, `Temperature`, `MedicalPres`, `CreationDate`) VALUES
 (1, 1, '80/120', '120', '85', '98', 'Test', '2022-11-06 13:19:41'),
-(5, NULL, '52', '65', '26', '54', 'this is test ', '2024-03-18 21:23:00'),
-(6, NULL, '100', '85', '101', '54', 'Test', '2024-03-27 10:30:00');
+(5, 0, '52', '65', '26', '54', 'this is test ', '2024-03-18 21:23:00'),
+(6, 0, '100', '85', '101', '54', 'Test', '2024-03-27 10:30:00'),
+(7, 0, '100', '85', '65', '101', 'TESTING ', '2024-03-21 17:29:00'),
+(8, 0, '40', '88', '60', '85', 'TESING COMING ON', '2024-03-11 08:30:00');
 
 -- --------------------------------------------------------
 
@@ -290,7 +295,7 @@ CREATE TABLE `userlog` (
   `username` varchar(255) DEFAULT NULL,
   `userip` binary(16) DEFAULT NULL,
   `loginTime` timestamp NULL DEFAULT current_timestamp(),
-  `logout` varchar(255) DEFAULT NULL,
+  `logout` varchar(255) DEFAULT current_timestamp(),
   `status` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
@@ -305,7 +310,18 @@ INSERT INTO `userlog` (`id`, `uid`, `username`, `userip`, `loginTime`, `logout`,
 (4, 2, 'amitk@gmail.com', 0x3a3a3100000000000000000000000000, '2022-11-06 13:15:58', '06-11-2022 06:50:46 PM', 1),
 (5, 1, 'johndoe12@test.com', 0x3a3a3100000000000000000000000000, '2024-02-23 13:40:09', '23-02-2024 07:13:00 PM', 1),
 (6, 1, 'johndoe12@test.com', 0x3a3a3100000000000000000000000000, '2024-02-23 14:46:39', NULL, 1),
-(7, 1, 'johndoe12@test.com', 0x3a3a3100000000000000000000000000, '2024-02-23 17:10:03', '23-02-2024 10:50:13 PM', 1);
+(7, 1, 'johndoe12@test.com', 0x3a3a3100000000000000000000000000, '2024-02-23 17:10:03', '23-02-2024 10:50:13 PM', 1),
+(8, 1, 'johndoe12@test.com', NULL, '2024-03-26 07:10:23', NULL, NULL),
+(9, 9, 'johndoe12@test.com', 0x3a3a3100000000000000000000000000, '2024-03-26 07:20:07', NULL, NULL),
+(10, 0, 'johndoe12@test.com', 0x3a3a3100000000000000000000000000, '2024-03-26 07:24:58', '2024-03-26 12:54:58', NULL),
+(11, 0, 'johndoe12@test.com', 0x3a3a3100000000000000000000000000, '2024-03-26 12:12:48', '2024-03-26 17:42:48', NULL),
+(12, 158, 'johndoe12@test.com', 0x3a3a3100000000000000000000000000, '2024-03-26 12:18:14', '2024-03-26 17:48:14', NULL),
+(13, 0, 'johndoe12@test.com', 0x3a3a3100000000000000000000000000, '2024-03-27 04:36:17', '2024-03-27 10:06:17', NULL),
+(14, 0, 'johndoe12@test.com', 0x3a3a3100000000000000000000000000, '2024-03-27 04:38:08', NULL, NULL),
+(15, 0, 'johndoe12@test.com', 0x3a3a3100000000000000000000000000, '2024-03-27 04:44:52', NULL, NULL),
+(16, 0, 'johndoe12@test.com', 0x3a3a3100000000000000000000000000, '2024-03-27 04:46:38', NULL, NULL),
+(17, 0, 'johndoe12@test.com', 0x3a3a3100000000000000000000000000, '2024-03-27 04:49:16', NULL, NULL),
+(18, 210, 'johndoe12@test.com', 0x3a3a3100000000000000000000000000, '2024-03-28 14:06:26', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -419,13 +435,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `doctors`
 --
 ALTER TABLE `doctors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `doctorslog`
@@ -437,7 +453,7 @@ ALTER TABLE `doctorslog`
 -- AUTO_INCREMENT for table `doctorspecilization`
 --
 ALTER TABLE `doctorspecilization`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `tblcontactus`
@@ -449,7 +465,7 @@ ALTER TABLE `tblcontactus`
 -- AUTO_INCREMENT for table `tblmedicalhistory`
 --
 ALTER TABLE `tblmedicalhistory`
-  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tblpage`
@@ -467,7 +483,7 @@ ALTER TABLE `tblpatient`
 -- AUTO_INCREMENT for table `userlog`
 --
 ALTER TABLE `userlog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `users`
