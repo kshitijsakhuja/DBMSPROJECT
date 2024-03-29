@@ -13,7 +13,8 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-if (!empty($_POST['fullname']) && !empty($_POST['address']) && !empty($_POST['city']) && !empty($_POST['email']) && !empty($_POST['gender'])) {
+if (!empty($_POST['fullname']) && !empty($_POST['address']) && !empty($_POST['city']) && !empty($_POST['email']) && !empty($_POST['gender'])) 
+{
   // Form data
   $full_name = isset($_POST['fullname']) ? $_POST['fullname'] : '';
   $address = isset($_POST['address']) ? $_POST['address'] : '';

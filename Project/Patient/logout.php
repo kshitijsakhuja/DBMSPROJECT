@@ -3,9 +3,9 @@
 session_start();
 
 // Check if the user is logged in
-if(isset($_SESSION['user_id'])) {
+if(isset($_SESSION['uid'])) {
     // Get the user ID from the session
-    $user_id = $_SESSION['user_id'];
+    $user_id = $_SESSION['uid'];
     
     // Your database connection code
     $servername = "localhost";

@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hashedPassword = md5($password);
 
     // Prepare and execute SQL query to insert data into the database
-    $stmt = $pdo->prepare("INSERT INTO doctors (id, specialization, doctorname, address, docFees, contactno, docEmail, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $pdo->prepare("INSERT INTO doctors (id, specialization, doctorname, address, docFees, contactno, docEmail, password, updationDate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP) ON DUPLICATE KEY UPDATE updationDate = CURRENT_TIMESTAMP");
     $stmt->execute([$id, $specialization, $name, $clinicAddress, $consultancyFees, $contactNo, $email, $hashedPassword]);
 
     // Check if insertion was successful
