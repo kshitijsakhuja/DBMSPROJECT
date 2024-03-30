@@ -21,24 +21,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $date = !empty($_POST['appointmentDate']) ? $_POST['appointmentDate'] : '';
     $time = !empty($_POST['appointmentTime']) ? $_POST['appointmentTime'] : '';
     $consultancy_fees = !empty($_POST['consultancyfees']) ? $_POST['consultancyfees'] : '';
+    $doctorid = !empty($_POST['doctorId']) ? $_POST['doctorId'] : '';
+    $userid = !empty($_POST['userId']) ? $_POST['userId'] : '';
+    $userstatus = !empty($_POST['userStatus']) ? $_POST['userStatus'] : '';
+    $doctorstatus = !empty($_POST['doctorStatus']) ? $_POST['doctorStatus'] : '';
 
     // Prepare SQL statement to insert data into the database
-    $sql = "INSERT INTO appointment (doctorspecialization, doctor, appointmentDate, appointmentTime, consultancyfees) VALUES ('$specialization', '$doctor', '$date', '$time', '$consultancy_fees')";
-    // Prepare and bind parameters
-    // $stmt = $conn->prepare($sql);
-    // $stmt->bind_param("sssss", $specialization, $doctor, $date, $time, $consultancy_fees);
+    $sql = "INSERT INTO appointment (doctorspecialization, doctor, appointmentDate, appointmentTime, consultancyfees, doctorId, userId, userStatus, doctorStatus) 
+    VALUES ('$specialization', '$doctor', '$date', '$time', '$consultancy_fees', '$doctorid', '$userid', '$userstatus', '$doctorstatus')";
     
     // Execute the statement
-    if ($conn->query($sql)=== TRUE) {
+    if ($conn->query($sql) === TRUE) {
         echo "Appointment booked successfully!";
         header("location:book-appointment.html");
-
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
-
-    // Close statement
-
 }
 
 // Close connection

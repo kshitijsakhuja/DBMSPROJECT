@@ -22,6 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 // Store login information in userlog table
                 $loginTime = date('Y-m-d H:i:s');
+                //$logoutTime=date('Y-m-d H:i:s');
                 $ipAddress = $_SERVER['REMOTE_ADDR'];
                 $stmt = $pdo->prepare("INSERT INTO userlog (username, uid, logintime, userip) VALUES (:username, :session_id, :login_time, :ip_address)");
                 $stmt->bindParam(":username", $username, PDO::PARAM_STR);
