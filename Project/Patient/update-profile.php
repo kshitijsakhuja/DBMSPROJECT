@@ -13,8 +13,9 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if (!empty($_POST['fullname']) && !empty($_POST['address']) && !empty($_POST['city']) && !empty($_POST['email']) && !empty($_POST['gender'])) {
+if (!empty($_POST['id']) && !empty($_POST['fullname']) && !empty($_POST['address']) && !empty($_POST['city']) && !empty($_POST['email']) && !empty($_POST['gender'])) {
     // Form data
+    $U_id = $_POST['id'];
     $full_name = $_POST['fullname'];
     $address = $_POST['address'];
     $city = $_POST['city'];
@@ -27,7 +28,7 @@ if (!empty($_POST['fullname']) && !empty($_POST['address']) && !empty($_POST['ci
     $stmt = $conn->prepare($sql);
 
     // Bind parameters
-    $stmt->bind_param("sssssi", $full_name, $address, $city, $email, $gender, $_SESSION['id']);
+    $stmt->bind_param("sssssi", $full_name, $address, $city, $email, $gender, $U_id);
 
     // Execute the query
     if ($stmt->execute()) {
