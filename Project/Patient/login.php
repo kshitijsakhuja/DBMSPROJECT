@@ -19,14 +19,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 // Generate a unique session ID
                 $sessionId = session_id();
-
+                
                 // Store login information in userlog table
                 $loginTime = date('Y-m-d H:i:s');
-                //$logoutTime=date('Y-m-d H:i:s');
                 $ipAddress = $_SERVER['REMOTE_ADDR'];
-                $stmt = $pdo->prepare("INSERT INTO userlog (username, uid, logintime, userip) VALUES (:username, :session_id, :login_time, :ip_address)");
+                $stmt = $pdo->prepare("INSERT INTO userlog (username, uid, logintime, userip) VALUES (:username, :sessionId, :login_time, :ip_address)");
                 $stmt->bindParam(":username", $username, PDO::PARAM_STR);
-                $stmt->bindParam(":session_id", $sessionId, PDO::PARAM_STR);
+                $stmt->bindParam(":sessionId", $sessionId, PDO::PARAM_STR);
                 $stmt->bindParam(":login_time", $loginTime, PDO::PARAM_STR);
                 $stmt->bindParam(":ip_address", $ipAddress, PDO::PARAM_STR);
                 $stmt->execute();

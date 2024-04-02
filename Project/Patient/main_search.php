@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>CureConnect</title>
+    <link rel="stylesheet" href="search_style.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="https://kit.fontawesome.com/5479b044dc.js" crossorigin="anonymous"></script>
     <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
@@ -24,7 +25,7 @@
         </li>
         <hr>
         <li>
-          <a href="main_search.php">
+          <a href="#main_search.php">
             <i class="fa-solid fa-user-doctor"></i>
             <span class="links_name">Search Doctors</span>
           </a>
@@ -86,10 +87,10 @@
           <i class="bx bx-menu sidebarBtn"></i>
           <span class="dashboard">Dashboard</span>
         </div>
-        <div class="search-box">
+        <!-- <div class="search-box">
           <input type="text" placeholder="Search Doctors..." />
           <i class="bx bx-search"></i>
-        </div>
+        </div> -->
         <button class="profile-details dropbtn dropdown" onclick="toggleDropdown()">
           <i class="fa-solid fa-user-large"></i>
           <span class="admin_name">John Doe</span>
@@ -115,62 +116,96 @@
       </nav>
 
       <div class="home-content">
-        
-        
-              <div class="main ">
-                <div class="add-record-form">
-                  <h2>Add Medical Record</h2><br><hr><br><br>
-                  <form action="add-medicalhistory.php" method="POSt">
-                    <div class="form-group">
-                      <label for="visit-date">Record Date</label>
-                      <input type="datetime-local" id="CretionDate" name="CreationDate">
-                    </div><br>
 
-                    <div class="form-group">
-                      <label for="blood-pressure">Blood Pressure</label>
-                      <input type="text" id="BloodPressure" name="BloodPressure" placeholder="Enter Blood Pressure">
-                    </div><br>
+        <div class="main ">
+          <div class="search-container">
+            <h1>Doctor Search</h1><br><br>
+            <form action="main_search.php" method="post">
+            <label for="department">Select Department:</label>
+            <select name="department" id="department">
+              <option value="All">All Departments</option>
+              <option value="Dentistry">Dentistry</option>
+              <option value="Cardiology">Cardiology</option>
+              <option value="Pediatrics">Pediatrics</option>
+              <option value="Neurology">Neurology</option>
+              <option value="Gastroenterology">Gastroenterology</option>
+              <option value="Pulmonology">Pulmonology</option>
+              <option value="Dermatology">Dermatology</option>
+              <option value="Hematology">Hematology</option>
+              <option value="General Surgery">General Surgery</option>
+            </select><br><br>   
+            <input type="submit" value="Search">
+            </form>
+    <div id="results">
+      <div class = 'searchresults'>
+        <h1>Search Results:</h1><br>
+        <?php
+          // Establishing connection to the database
+          $servername = "localhost";
+          $username = "root"; // Replace with your MySQL username
+          $password = ""; // Replace with your MySQL password
+          $dbname = "hms"; // Replace with your database name
 
-                    <div class="form-group">
-                      <label for="weight">Weight</label>
-                      <input type="text" id="Weight" name="Weight" placeholder="Enter Weight">
-                    </div><br>
+          $conn = new mysqli($servername, $username, $password, $dbname);
 
-                    <div class="form-group">
-                      <label for="blood-sugar">Blood Sugar</label>
-                      <input type="text" id="BloodSugar" name="BloodSugar" placeholder="Enter Blood Sugar">
-                    </div><br>
+          if ($conn->connect_error) {
+              die("Connection failed: " . $conn->connect_error);
+          }
 
-                      <div class="form-group">
-                        <label for="body-temperature">Body Temperature</label>
-                        <input type="text" id="Temperature" name="Temperature" placeholder="Enter Body Temperature">
-                      </div><br>
+          // Retrieving search query
+          if($_SERVER["REQUEST_METHOD"]=="POST")
+          {
+            $specilization = $_POST['department'];
 
-                      <div class="form-group textarea">
-                        <label id="medical-prescription-label" for="medical-prescription">Medical Prescription</label>
-                         <textarea  id="MedicalPres" name="MedicalPres" placeholder="Enter Medical Prescription"></textarea>
-                      </div>
-                      <br>
-                      <div class="form-group">
-                        <a href="medical-history.html">
-                          <button type="submit">Add Medical Record</button>
-                        </a>
-                      </div>
-</form>
+          // Constructing SQL query
+          if($specilization=="" || $specilization == 'All')
+          {
+            $sql = "SELECT * FROM doctors";
+          }
+          else 
+          {
+              $sql = "SELECT * FROM doctors WHERE specilization = '$specilization'";
+          }
 
-                  
+          $result = $conn->query($sql);
+          echo  '<table>
+          <tr>
+            <th>Name</th>
+            <th>Department</th>
+          </tr>';
+          if ($result->num_rows > 0) {
+              // Output data of each row
+              while($row = $result->fetch_assoc()) {
+                  echo '<tr><td> ' . $row["doctorName"] . '</td><td> ' . $row["specilization"] . '</td></tr>';
+              }
+          } else {
+              echo "<h3>0 results</h3>";
+          }
+          echo '</table>';
+          $conn->close();
+          }
+          ?>
+      </div>
+    </div>
+        </div>        
+        </div>
+    </div>
+    
 
-                              </div>
-              </div>
+
     <script>
-      let sidebar = document.querySelector(".sidebar");
-      let sidebarBtn = document.querySelector(".sidebarBtn");
-      sidebarBtn.onclick = function () {
-        sidebar.classList.toggle("active");
-        if (sidebar.classList.contains("active")) {
-          sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
-        } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-      };
-    </script>
-  </body>
-</html>
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".sidebarBtn");
+        sidebarBtn.onclick = function () {
+          sidebar.classList.toggle("active");
+          if (sidebar.classList.contains("active")) {
+            sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+          } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+        };
+      </script>
+    </body>
+    </html>
+
+
+
+    
