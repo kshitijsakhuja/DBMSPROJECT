@@ -34,8 +34,8 @@ if ($result->num_rows > 0) {
         echo "<tr>
                 <td>{$row['id']}</td>
                 <td>{$row['specialization']}</td>
-                <td>{$row['creation_date']}</td>
-                <td>{$row['updation_date']}</td>
+                <td>{$row['creation Date']}</td>
+                <td>{$row['updation Date']}</td>
                 <td>
                     <button class='edit'><i class='fas fa-pen'></i></button>
                     <button class='delete'><i class='fas fa-trash-alt'></i></button>
@@ -45,7 +45,7 @@ if ($result->num_rows > 0) {
     echo '</table>';
 } else {
     echo "0 results";
-    header("LOocation:specializations.html");
+    header("Location:specializations.html");
 }
 
 // Close connection

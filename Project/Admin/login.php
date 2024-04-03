@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 session_regenerate_id();
                 $_SESSION["loggedin"] = true;
                 $_SESSION["username"] = $username;
-                echo "Reached";     
+                $_SESSION["updationDate"] = time(); // Store login time
                 header("location: index.html");
                 exit;
             } else {
