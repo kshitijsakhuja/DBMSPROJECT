@@ -93,10 +93,12 @@
           <i class="bx bx-menu sidebarBtn"></i>
           <span class="dashboard">Dashboard</span>
         </div>
-        <!-- <div class="search-box">
-          <input type="text" placeholder="Search Users..." />
-          <i class="bx bx-search"></i>
-        </div> -->
+        <div class="search-box">
+          <form action="#" method="post">
+            <input type="text" id="doct_search" name="doct_search" placeholder="Search Doctors..." />
+            <button type="submit" name="submit_search"><i class="bx bx-search"></i></button>
+          </form>
+        </div>
         <button class="profile-details dropbtn dropdown" onclick="toggleDropdown()">
           <i class="fa-solid fa-user-large"></i>
           <span class="admin_name">John Doe</span>
@@ -125,41 +127,129 @@
         
         
               <div class="main ">
-                <div class="profile-container">
-                <div class="update-profile-form">
-                  <h2>Update Profile</h2><br><hr><br><br>
-                  <form id="updateProfileForm">
-              <div class="form-group">
-                <label for="fullname">Full Name:</label>
-                <input type="text" id="fullname" name="fullname" placeholder="Your full name..">
-              </div><br>
-              <div class="form-group">
-                <label for="address">Address:</label>
-                <input type="text" id="address" name="address" placeholder="Your address..">
-              </div><br>
-              <div class="form-group">
-                <label for="city">City:</label>
-                <input type="text" id="city" name="city" placeholder="Your City">
-              </div><br>
-              <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Your email..">
-              </div><br>
-              <div class="form-group">
-                <label for="gender">Gender:</label>
-                <div class="radio-buttons">
-                  <input type="radio" id="female" name="gender" value="female" checked >
-                  <label for="female">Female</label>
-                  <input type="radio" id="male" name="gender" value="male">
-                  <label for="male">Male</label>
-                </div>
-              </div>
-              <div class="form-group">
-                <a href="manage-profile.html"><button type="button" id="saveButton">Save</button></a>
-              </div>
-            </form>
-                  </div>
-                </div>
+                <div class="main-head">
+            <!-- <h2>Manage Doctors</h2><br><hr><br><br>
+            <a href="add-doctor.html"><button><i class="fa-solid fa-plus"></i>Add Doctor</button></a>
+            <a href="specializations.html"><button><i class="fa-solid fa-circle-info"></i>Specializations</button></a>
+            </div> -->
+          <div class="table-container">
+
+<!-- <table>
+  <tr>
+    <th>ID</th>
+    <th>Specialization</th>
+    <th>Doctor Name</th>
+    <th>Creation DateTime</th>
+    <th>Action</th>
+  </tr>
+  <tr>
+  <td>1</td>
+  <td>Cardiology</td>
+  <td>Dr. John Smith</td>
+  <td>2024-03-20 10:00 AM</td>
+  <td>
+    <button class="edit"><i class="fas fa-pen"></i></button>
+    <button class="delete"><i class="fas fa-trash-can"></i></button>
+  </td>
+  </tr>
+  <tr>
+  <td>2</td>
+  <td>Dermatology</td>
+  <td>Dr. Emily Johnson</td>
+  <td>2024-03-21 09:30 AM</td>
+  <td>
+    <button class="edit"><i class="fas fa-pen"></i></button>
+    <button class="delete"><i class="fas fa-trash-can"></i></button>
+  </td>
+</tr>
+
+<tr>
+  <td>3</td>
+  <td>Orthopedics</td>
+  <td>Dr. Michael Brown</td>
+  <td>2024-03-22 11:15 AM</td>
+  <td>
+    <button class="edit"><i class="fas fa-pen"></i></button>
+    <button class="delete"><i class="fas fa-trash-can"></i></button>
+  </td>
+</tr>
+
+<tr>
+  <td>4</td>
+  <td>Neurology</td>
+  <td>Dr. Sarah Lee</td>
+  <td>2024-03-23 02:00 PM</td>
+  <td>
+    <button class="edit"><i class="fas fa-pen"></i></button>
+    <button class="delete"><i class="fas fa-trash-can"></i></button>
+  </td>
+</tr>
+ Include more rows as needed
+</table> -->
+
+</div>
+
+<div id="results">
+  <div class = 'searchresults'>
+    <h1><center>Manage Doctors:</center><br><hr></h1><br>
+    <a href="add-doctor.html"><button><i class="fa-solid fa-plus"></i>Add Doctor</button></a>
+            <a href="specializations.html"><button><i class="fa-solid fa-circle-info"></i>Specializations</button></a>
+    
+            <?php
+      $servername = "localhost";
+      $username = "root"; // Replace with your MySQL username
+      $password = ""; // Replace with your MySQL password
+      $dbname = "hms"; // Replace with your database name
+
+      $conn = new mysqli($servername, $username, $password, $dbname);
+
+      if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
+      }
+
+      // Check if a search has been performed
+      if (isset($_POST['doct_search'])) {
+          $doctor = $_POST['doct_search'];
+          $sql = "SELECT * FROM doctors WHERE doctorName LIKE '%$doctor%'";
+      } else {
+          // If no search has been performed, fetch all data
+          $sql = "SELECT * FROM doctors";
+      }
+
+      $result = $conn->query($sql);
+
+      echo '<table>
+              <tr>
+                <th>ID</th>
+                <th>Specialization</th>
+                <th>Doctor Name</th>
+                <th>Creation DateTime</th>
+                <th>Action</th>
+              </tr>';
+        if ($result->num_rows > 0) {
+          // Output data of each row
+          while ($row = $result->fetch_assoc()) {
+            echo '<tr>
+                      <td>' . $row["id"] . '</td>
+                      <td>' . $row["specialization"] . '</td>
+                      <td>' . $row["doctorName"] . '</td>
+                      <td>' . $row["creationDate"] . '</td>
+                      <td>
+                          <button class="edit"><i class="fas fa-pen"></i></button>
+                          <button class="delete"><i class="fas fa-trash-alt"></i></button>
+                      </td>
+                    </tr>';
+          }
+        } else {
+          echo "<tr><td colspan='4'>No results found</td></tr>";
+        }
+        echo '</table>';
+        $conn->close();
+      ?>
+
+  </div>
+
+  
               </div>
               </div>
     <script>

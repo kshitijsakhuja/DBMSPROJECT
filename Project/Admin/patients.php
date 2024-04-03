@@ -93,10 +93,14 @@
           <i class="bx bx-menu sidebarBtn"></i>
           <span class="dashboard">Dashboard</span>
         </div>
-        <!-- <div class="search-box">
-          <input type="text" placeholder="Search Users..." />
-          <i class="bx bx-search"></i>
-        </div> -->
+
+        <div class="search-box">
+          <form action="#" method="post">
+            <input type="text" id="patient_search" name="patient_search" placeholder="Search Patients..."  value=""/>
+            <button type="submit" name="submit_search"><i class="bx bx-search"></i></button>
+          </form>
+        </div>
+
         <button class="profile-details dropbtn dropdown" onclick="toggleDropdown()">
           <i class="fa-solid fa-user-large"></i>
           <span class="admin_name">John Doe</span>
@@ -125,41 +129,75 @@
         
         
               <div class="main ">
-                <div class="profile-container">
-                <div class="update-profile-form">
-                  <h2>Update Profile</h2><br><hr><br><br>
-                  <form id="updateProfileForm">
-              <div class="form-group">
-                <label for="fullname">Full Name:</label>
-                <input type="text" id="fullname" name="fullname" placeholder="Your full name..">
-              </div><br>
-              <div class="form-group">
-                <label for="address">Address:</label>
-                <input type="text" id="address" name="address" placeholder="Your address..">
-              </div><br>
-              <div class="form-group">
-                <label for="city">City:</label>
-                <input type="text" id="city" name="city" placeholder="Your City">
-              </div><br>
-              <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Your email..">
-              </div><br>
-              <div class="form-group">
-                <label for="gender">Gender:</label>
-                <div class="radio-buttons">
-                  <input type="radio" id="female" name="gender" value="female" checked >
-                  <label for="female">Female</label>
-                  <input type="radio" id="male" name="gender" value="male">
-                  <label for="male">Male</label>
-                </div>
+              <div id="results">
+              <div class = 'searchresults'>
+    <h1><br><center>Manage Results:</center></h1><br><hr><br>
+    
+    <?php
+      $servername = "localhost";
+      $username = "root"; // Replace with your MySQL username
+      $password = ""; // Replace with your MySQL password
+      $dbname = "hms"; // Replace with your database name
+
+      $conn = new mysqli($servername, $username, $password, $dbname);
+
+      if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
+      }
+
+      // Check if a search has been performed
+      if (isset($_POST['patient_search'])) {
+          $patient = $_POST['patient_search'];
+          $sql = "SELECT * FROM tblpatient WHERE PatientName LIKE '%$patient%'";
+      } else {
+          // If no search has been performed, fetch all data
+          $sql = "SELECT * FROM tblpatient";
+      }
+
+      $result = $conn->query($sql);
+
+      echo '<table>
+              <tr>
+                  <th>Patient Name</th>
+                  <th>Patient Contact Number</th>
+                  <th>Patient Gender</th>
+                  <th>Creation Date</th>
+                  <th>Updation Date</th>
+                  <th>Action</th>
+              </tr>';
+
+      if ($result->num_rows > 0) {
+          // Output data of each row
+          while ($row = $result->fetch_assoc()) {
+              echo '<tr>
+                      <td>' . $row["PatientName"] . '</td>
+                      <td>' . $row["PatientContno"] . '</td>
+                      <td>' . $row["PatientGender"] . '</td>
+                      <td>' . $row["CreationDate"] . '</td>
+                      <td>' . $row["UpdationDate"] . '</td>
+                      <td>
+                          <button class="edit"><i class="fas fa-pen"></i></button>
+                          <button class="delete"><i class="fas fa-trash-alt"></i></button>
+                      </td>
+                    </tr>';
+          }
+      } else {
+          echo "<tr><td colspan='6'>No results found</td></tr>";
+      }
+
+      echo '</table>';
+      $conn->close();
+      ?>
+
+
+  </div>
+
+  
               </div>
-              <div class="form-group">
-                <a href="manage-profile.html"><button type="button" id="saveButton">Save</button></a>
-              </div>
-            </form>
-                  </div>
-                </div>
+
+
+
+</div>
               </div>
               </div>
     <script>
