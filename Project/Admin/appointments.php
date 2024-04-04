@@ -38,7 +38,7 @@
         </li>
         <hr>
         <li>
-          <a href="appointments.php">
+          <a href="appointments.html">
             <i class="fa-regular fa-calendar-check"></i>
             <span class="links_name">Appointments</span>
           </a>
@@ -80,7 +80,7 @@
         </li>
         <hr>
         <li class="log_out">
-          <a href="logout.php">
+          <a href="#">
             <i class="bx bx-log-out"></i>
             <span class="links_name">Log out</span>
           </a>
@@ -99,7 +99,7 @@
         </div> -->
         <button class="profile-details dropbtn dropdown" onclick="toggleDropdown()">
           <i class="fa-solid fa-user-large"></i>
-          <span class="admin_name">Admin</span>
+          <span class="admin_name">John Doe</span>
           <i class="bx bx-chevron-down"></i>
         </button>
         <div id="myDropdown" class="dropdown-content">
@@ -122,53 +122,115 @@
       </nav>
 
       <div class="home-content">
-        
-        
-              <div class="box-container">
-                  <a href="patients.php">
-                      <div class="box">
-                        <i class="fa-solid fa-users fa-7x"></i>
-                      <h3>Manage Patients</h3>  
-                      <h6>Total Patients: 2</h6>       
-                  </div>
-                  </a>
-                  <a href="doctors.php">
-                      <div class="box">
-                        <i class="fa-solid fa-user-doctor fa-7x"></i>
-                      <h3>Manage Doctors</h3>
-                      <h6>Total Doctors: 2</h6>         
-                  </div>
-                  </a>
-                  
-                  <a href="appointments.php">
-                      <div class="box">
-                        <i class="fa-solid fa-calendar-check fa-7x"></i>
-                      <h3>Appointments</h3>
-                      <h6>Total Appointments: 2</h6>         
-                  </div>
-                  </a>
-                  <a href="queries.html">
-                      <div class="box">
-                        <i class="fa-solid fa-circle-question fa-7x"></i>
-                      <h3>Answer Queries</h3>      
-                      <h6>Unread Queries: 2</h6>  
-                  </div>
-                  </a>
-                  <a href="report.html">
-                      <div class="box">
-                        <i class="fa-solid fa-file-lines fa-7x"></i>
-                      <h3>Generate Reports</h3>   
-                      <h6>Last Generated On: 23-03-2024</h6>    
-                  </div>
-                  </a>    
-                  <a href="pages.html">
-                    <div class="box">
-                      <i class="fa-solid fa-file-lines fa-7x"></i>
-                    <h3>Manage Pages</h3>   
-                    <h6>Last Updated On: 23-03-2024</h6>    
-                </div>
-                </a>            
-              </div>
+        <div class="main">
+          <div class="main-head">
+            <h2>Appointments History</h2><br><hr><br><br>
+          </div>
+          <div class="table-container">
+
+<table>
+  <tr>
+    <th>Appointment ID</th>
+    <th>Doctor Name</th>
+    <th>Specialization</th>
+    <th>Appointment Date</th>
+    <th>Appointment Time</th>
+    <th>Creation DateTime</th>
+    <th>Action</th>
+  </tr>
+  <!-- <tr>
+    <td>1</td>
+    <td>John Doe</td>
+    <td>Dr. Smith</td>
+    <td>2024-03-20 10:00 AM</td>
+    <td>2024-03-15 08:30 AM</td>
+    <td class="status completed">Confirmed</td>
+    <td>
+      <button class="edit"><i class="fas fa-pen"></i></button>
+      <button class="delete"><i class="fas fa-trash-can"></i></button>
+    </td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Jane Smith</td>
+    <td>Dr. Johnson</td>
+    <td>2024-03-21 02:30 PM</td>
+    <td>2024-03-16 09:45 AM</td>
+    <td class="status pending">Pending</td>
+    <td>
+      <button class="edit"><i class="fas fa-pen"></i></button>
+      <button class="delete"><i class="fas fa-trash-can"></i></button>
+    </td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Michael Brown</td>
+    <td>Dr. Lee</td>
+    <td>2024-03-22 11:15 AM</td>
+    <td>2024-03-17 10:20 AM</td>
+    <td class="status completed">Confirmed</td>
+    <td>
+      <button class="edit"><i class="fas fa-pen"></i></button>
+      <button class="delete"><i class="fas fa-trash-can"></i></button>
+    </td>
+  </tr> -->
+  <!-- Include more rows as needed -->
+
+
+  <?php
+// Database connection details
+$servername = "localhost";
+$username = "root";
+$password = ''; // If your password is empty, leave it as an empty string
+$dbname = "hms";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Fetch data from the database
+$sql = "SELECT * FROM appointment";
+$result = $conn->query($sql);
+
+if ($result === false) {
+    die("Error executing query: " . $conn->error);
+}
+
+if ($result->num_rows > 0) {
+    // Output data of each row
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>" . $row['id'] . "</td>";;
+        echo "<td>" . $row['doctor'] . "</td>";
+        echo "<td>" . $row['doctorSpecialization'] . "</td>";
+        echo "<td>" . $row['appointmentDate'] . "</td>";
+        echo "<td>" . $row['appointmentTime'] . "</td>";
+        echo "<td>" . $row['postingDate'] . "</td>";
+        // echo "<td class='status " . ($row['status'] == 'Confirmed' ? 'completed' : 'pending') . "'>" . $row['status'] . "</td>";
+        echo "<td>
+                <button class='edit'><i class='fas fa-pen'></i></button>
+                <button class='delete'><i class='fas fa-trash-can'></i></button>
+              </td>";
+        echo "</tr>";
+    }
+} else {
+    echo "<tr><td colspan='7'>No appointments found</td></tr>";
+}
+$conn->close();
+?>
+</table>
+
+
+
+
+</div>
+        </div>
+      </div>
+    </section>
     <script>
       let sidebar = document.querySelector(".sidebar");
       let sidebarBtn = document.querySelector(".sidebarBtn");

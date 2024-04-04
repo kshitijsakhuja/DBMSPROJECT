@@ -2,13 +2,14 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
-    <title>Home</title>
+    <title>CureConnect</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://kit.fontawesome.com/5479b044dc.js" crossorigin="anonymous"></script>
     <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="script.js"></script>
-    <!-- <link rel="icon" type="image/x-icon" href="/Patient/logo.png"> -->
+
+
   </head>
   <body onload="onload()">
     <div class="sidebar">
@@ -18,7 +19,7 @@
       </div>
       <ul class="nav-links">
         <li>
-          <a href="index.html" >
+          <a href="index.html" class="active" >
             <i class="bx bx-grid-alt"></i>
             <span class="links_name">Dashboard</span>
           </a>
@@ -32,14 +33,14 @@
           </li>
           <hr>
         <li>
-          <a href="book-appointment.html">
+          <a href="book-appointment.html" class="something">
             <i class="fa-solid fa-calendar-plus"></i>
             <span class="links_name">Book Appointment</span>
           </a>
           </li>
           <hr>
         <li>
-          <a href="appointments-history.php">
+          <a href="appointments-history.html">
             <i class="fa-solid fa-calendar-check"></i>
             <span class="links_name">Appointments History</span>
           </a>
@@ -53,7 +54,7 @@
         </li>
         <hr>
         <li>
-          <a href="contact-us.html">
+          <a href="contact-us.html" class="">
             <i class="fa-regular fa-circle-question"></i>
             <span class="links_name">Raise Queries</span>
           </a>
@@ -74,7 +75,7 @@
         </li>
         <hr>
         <li class="log_out">
-          <a href="logout.php">
+          <a href="#">
             <i class="bx bx-log-out"></i>
             <span class="links_name">Log out</span>
           </a>
@@ -110,53 +111,121 @@
             <hr>
           </div>
         </div>
-        
-        
-        
       </nav>
 
       <div class="home-content">
-        
-        
-              <div class="box-container">
-                  <a href="main_search.php">
-                      <div class="box">
-                        <i class="fa-solid fa-users fa-7x"></i>
-                      <h3>Search Doctors</h3>  
-                  </div>
-                  </a>
-                  <a href="book-appointment.html">
-                      <div class="box">
-                        <i class="fa-solid fa-calendar-plus fa-7x"></i>
-                      <h3>Book Appointment</h3>       
-                  </div>
-                  </a>
-                  
-                  <a href="appointments-history.php">
-                      <div class="box">
-                        <i class="fa-regular fa-calendar-check fa-7x"></i>
-                      <h3>My Appointments</h3>        
-                  </div>
-                  </a>
-                  <a href="medical-history.php">
-                      <div class="box">
-                        <i class="fa-solid fa-file-medical fa-7x"></i>
-                      <h3>My Medical History</h3>      
-                  </div>
-                  </a>
-                  <a href="main-update.php">
-                    <div class="box">
-                      <i class="fa-solid fa-circle-user fa-7x"></i>
-                    <h3>Manage Profile</h3>   
-                </div>
-                </a>         
-                  <a href="contact-us.html">
-                      <div class="box">
-                        <i class="fa-solid fa-circle-question fa-7x"></i>
-                      <h3>Support</h3>    
-                  </div>
-                  </a>     
-              </div>
+        <div class="main">
+          <div class="main-head">
+            <h2>Appointments History</h2><br><hr><br><br>
+            <a href="book-appointment.html"><button><i class="fa-solid fa-plus"></i>Add Appointment</button></a>
+          </div>
+          <div class="table-container">
+
+<table>
+  
+  <tr>
+    <th>Appointment ID</th>
+    <th>Doctor Name</th>
+    <th>Specialization</th>
+    <th>Appointment Date</th>
+    <th>Appointment Time</th>
+    <th>Creation DateTime</th>
+    <th>Action</th>
+  </tr>
+  <!-- <tr>
+    <td>1</td>
+    <td>John Doe</td>
+    <td>Dr. Smith</td>
+    <td>2024-03-20 10:00 AM</td>
+    <td>2024-03-15 08:30 AM</td>
+    <td class="status completed">Confirmed</td>
+    <td>
+      <button class="edit"><i class="fas fa-pen"></i></button>
+      <button class="delete"><i class="fas fa-trash-can"></i></button>
+    </td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Jane Smith</td>
+    <td>Dr. Johnson</td>
+    <td>2024-03-21 02:30 PM</td>
+    <td>2024-03-16 09:45 AM</td>
+    <td class="status pending">Pending</td>
+    <td>
+      <button class="edit"><i class="fas fa-pen"></i></button>
+      <button class="delete"><i class="fas fa-trash-can"></i></button>
+    </td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Michael Brown</td>
+    <td>Dr. Lee</td>
+    <td>2024-03-22 11:15 AM</td>
+    <td>2024-03-17 10:20 AM</td>
+    <td class="status completed">Confirmed</td>
+    <td>
+      <button class="edit"><i class="fas fa-pen"></i></button>
+      <button class="delete"><i class="fas fa-trash-can"></i></button>
+    </td>
+  </tr> -->
+  <!-- Include more rows as needed -->
+
+  <?php
+// Database connection details
+$servername = "localhost";
+$username = "root";
+$password = ''; // If your password is empty, leave it as an empty string
+$dbname = "hms";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Fetch data from the database
+$sql = "SELECT * FROM appointment";
+$result = $conn->query($sql);
+
+if ($result === false) {
+    die("Error executing query: " . $conn->error);
+}
+
+if ($result->num_rows > 0) {
+    // Output data of each row
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>" . $row['id'] . "</td>";;
+        echo "<td>" . $row['doctor'] . "</td>";
+        echo "<td>" . $row['doctorSpecialization'] . "</td>";
+        echo "<td>" . $row['appointmentDate'] . "</td>";
+        echo "<td>" . $row['appointmentTime'] . "</td>";
+        echo "<td>" . $row['postingDate'] . "</td>";
+        // echo "<td class='status " . ($row['status'] == 'Confirmed' ? 'completed' : 'pending') . "'>" . $row['status'] . "</td>";
+        echo "<td>
+                <button class='edit'><i class='fas fa-pen'></i></button>
+                <button class='delete'><i class='fas fa-trash-can'></i></button>
+              </td>";
+        echo "</tr>";
+    }
+} else {
+    echo "<tr><td colspan='7'>No appointments found</td></tr>";
+}
+$conn->close();
+?>
+
+</table>
+
+
+
+
+
+</div>
+        </div>
+      </div>
+
     <script>
       let sidebar = document.querySelector(".sidebar");
       let sidebarBtn = document.querySelector(".sidebarBtn");

@@ -33,16 +33,16 @@ if (!empty($_POST['id']) && !empty($_POST['fullname']) && !empty($_POST['address
     // Execute the query
     if ($stmt->execute()) {
         $_SESSION['success_message'] = "Updated Successfully";
-        header('Location: manage-profile.html');
+        header('Location: main-update.php');
         exit;
     } else {
         $_SESSION['error_message'] = "Error updating record: " . $conn->error;
-        header('Location: manage-profile.html');
+        header('Location: main-update.php');
         exit;
     }
 } else {
     $_SESSION['error_message'] = "All fields are required.";
-    header('Location: manage-profile.html');
+    header('Location: main-update.php');
     exit;
 }
 

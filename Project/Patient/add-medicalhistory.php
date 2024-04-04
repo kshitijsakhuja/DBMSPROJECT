@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($conn->query($sql) === TRUE) {
         echo "Medical History Added";
         // Redirect to a success page or wherever you want
-        header("location:add-medical-history.html");
+        header("location:medical-history.php");
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }

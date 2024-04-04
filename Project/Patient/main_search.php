@@ -39,14 +39,14 @@
           </li>
           <hr>
         <li>
-          <a href="appointments-history.html">
+          <a href="appointments-history.php">
             <i class="fa-solid fa-calendar-check"></i>
             <span class="links_name">Appointments History</span>
           </a>
         </li>
         <hr>
         <li>
-          <a href="medical-history.html">
+          <a href="medical-history.php">
             <i class="fa-solid fa-file-medical"></i>
             <span class="links_name">Medical History</span>
           </a>
@@ -60,7 +60,7 @@
         </li>
         <hr>
         <li>
-          <a href="manage-profile.html">
+          <a href="main-update.php">
             <i class="fa-solid fa-circle-user"></i>
             <span class="links_name">Manage Profile</span>
           </a>
@@ -98,7 +98,7 @@
         </button>
         <div id="myDropdown" class="dropdown-content">
           <div class="dropdown-item">
-            <a href="manage-profile.html"><i class="fa-solid fa-user"></i>Manage Profile</a>
+            <a href="main-update.php"><i class="fa-solid fa-user"></i>Manage Profile</a>
             <hr>
           </div>
           <div class="dropdown-item">
