@@ -1,3 +1,40 @@
+<?php
+    // Database connection
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "hms";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    // Check if form is submitted
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Get form data
+        $fullname = $_POST['fullname'];
+        $address = $_POST['address'];
+        $city = $_POST['city'];
+        $gender = $_POST['gender'];
+        $email = $_POST['email'];
+
+        // Prepare and bind statement
+        $stmt = $conn->prepare("UPDATE doctors SET fullName=?, address=?, city=?, gender=?, email=? WHERE id=?");
+        $stmt->bind_param("sssssi", $fullname, $address, $city, $gender, $email, $id);
+
+        // Set parameters and execute
+        $id = 1; // Assuming you want to update a specific row, change it as per your requirement
+        $stmt->execute();
+
+        $stmt->close();
+
+        // Redirect after processing
+        header("Location: main-update.php");
+        exit;
+    }
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -10,14 +47,14 @@
     <script src="script.js"></script>
   </head>
   <body onload="onload()">
-    <div class="sidebar">
+  <div class="sidebar">
       <div class="logo-details">
         <img src="logo.png" alt="logo">
         <span class="logo_name">CureConnect</span>
       </div>
       <ul class="nav-links">
         <li>
-          <a href="index.html" class="">
+          <a href="index.html" class="active" >
             <i class="bx bx-grid-alt"></i>
             <span class="links_name">Dashboard</span>
           </a>
@@ -31,7 +68,7 @@
           </li>
           <hr>
         <li>
-          <a href="book-appointment.html" class="">
+          <a href="book-appointment.html" class="something">
             <i class="fa-solid fa-calendar-plus"></i>
             <span class="links_name">Book Appointment</span>
           </a>
@@ -81,7 +118,7 @@
       </ul>
     </div>
     <section class="home-section">
-      <nav>
+    <nav>
         <div class="sidebar-button">
           <i class="bx bx-menu sidebarBtn"></i>
           <span class="dashboard">Dashboard</span>
@@ -105,7 +142,7 @@
             <hr>
           </div>
           <div class="dropdown-item">
-            <a href="patient_reset.html"><i class="fa-solid fa-key"></i>Change Password</a>
+            <a href="patient_reset.html "><i class="fa-solid fa-key"></i>Change Password</a>
             <hr>
           </div>
         </div>
@@ -114,64 +151,54 @@
         
       </nav>
 
-       <div class="home-content">
+      <div class="home-content">
         <div class="main">
-          <div class="contact-us">
-            <h2 class="contact-heading">Contact Us</h2>
-            <hr>
-            <form action="contactus.php" method="POST" class="contact-form" >
-              <div class="form-row">
-                <div class="input-data">
-                  <label for="firstname">First Name</label>
-                  <input type="text"  name="firstname" placeholder="Enter your first name" required>
+          <div class="profile-container">
+            <div class="update-profile-form">
+              <h2>Update Profile</h2>
+              <br>
+              <hr>
+              <br>
+              <form id="updateProfileForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+              <div class="form-group">
+                  <label for="fullname">Full Name:</label>
+                  <input type="text" id="fullname" name="fullname" placeholder="Your full name..">
                 </div>
-                <div class="input-data">
-                  <label for="lastname">Last Name</label>
-                  <input type="text"  name="lastname" placeholder="Enter your last name" required>
+                <br>
+                <div class="form-group">
+                  <label for="address">Address:</label>
+                  <input type="text" id="address" name="address" placeholder="Your address..">
                 </div>
-              </div>
-              <div class="form-row">
-                <div class="input-data">
-                  <label for="email">Email Address</label>
-                  <input type="text" name="email" placeholder="Enter your email address" required>
+                <br>
+                <div class="form-group">
+                  <label for="city">City:</label>
+                  <input type="text" id="city" name="city" placeholder="Your City">
                 </div>
-                <div class="input-data">
-                  <label for="contactno">Phone Number</label>
-                  <input type="text"  name="contactno" placeholder="Enter your phone number" required>
+                <br>
+                <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" placeholder="Your email..">
                 </div>
-              </div>
-              <div class="form-row">
-                <div class="input-data">
-                  <label for="subject">Subject</label>
-                  <input type="text" name="subject" placeholder="Enter the subject" required>
+                <br>
+                <div class="form-group">
+                  <label>Gender:</label>
+                  <div class="radio-buttons">
+                    <input type="radio" id="female" name="gender" value="female" checked>
+                    <label for="female">Female</label>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                  </div>
                 </div>
-              </div>
-              <div class="form-row">
-                <div class="input-data textarea">
-                  <label for="message">Write your message</label>
-                  <textarea rows="8" cols="80" name="message" placeholder="Write your message here" required></textarea>     
+                <div class="form-group">
+                  <button type="submit" id="saveButton">Save</button>
                 </div>
-              </div>
-              <div class="form-row submit-btn">
-                <div class="input-data">
-                  <div class="inner"></div>
-                  <input type="submit" value="Submit">
-                </div>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </section>
-    <script>
-      let sidebar = document.querySelector(".sidebar");
-      let sidebarBtn = document.querySelector(".sidebarBtn");
-      sidebarBtn.onclick = function () {
-        sidebar.classList.toggle("active");
-        if (sidebar.classList.contains("active")) {
-          sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
-        } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-      };
-    </script>
+      <script>
+        // Sidebar toggle script
+      </script>
   </body>
 </html>

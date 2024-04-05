@@ -40,7 +40,7 @@
           </li>
           <hr>
         <li>
-          <a href="appointments-history.html">
+          <a href="appointments-history.php">
             <i class="fa-solid fa-calendar-check"></i>
             <span class="links_name">Appointments History</span>
           </a>
