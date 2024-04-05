@@ -57,7 +57,7 @@
                 <div class="dropdown-content">
                     <a href="#">English</a>
                     <a href="#">हिंदी</a>
-                    <a href="lang/index.php">മലയാളം</a>
+                    <a href="index.php">മലയാളം</a>
                 </div>
             </li>
             
@@ -67,7 +67,7 @@
     <nav class="desktop">
         <ul >
             <li><a href="">ക്യൂർക്കണെക്റ്റ്</a></li>
-            <li class="hideOnMobile"><a href="">ഹോം&nbspപേജ്</a></li>
+            <li class="hideOnMobile"><a href="index.php">ഹോം&nbspപേജ്</a></li>
             <li class="hideOnMobile"><a href="#Departments">ശാഖകൾ</a></li>
             <li class="hideOnMobile"><a href="">ഫോറം</a></li>
             <li class="hideOnMobile"><a href="#about-us">ഞങ്ങളെപ്പറ്റി&nbspഅറിയുക</a></li>
@@ -78,12 +78,12 @@
             <i class="fa-solid fa-language fa-2x"></i>
         </button>
         <div class="dropdown-content">
-            <a href="#">English</a>
+            <a href="/project/">English</a>
             <a href="#">हिंदी</a>
             <a href="lang/index.php">മലയാളം</a>
         </div>
     </li>
-            <li class="hideOnMobile"><a href="Patient/Patient_login.html" class="btn"><button class="book">ലോഗിൻ</button></a></li>
+            <li class="hideOnMobile"><a href="/project/Patient/Patient_login.html" class="btn"><button class="book">ലോഗിൻ</button></a></li>
             <li onclick=showSideBar() class="close"><a href="#"><i class="fa-solid fa-bars"></i>
         </ul>
     </nav>
@@ -92,7 +92,7 @@
         <div class="container">
             <h1>ക്യൂർക്കണെക്റ്റ്</h1>
             <p>ആരോഗ്യം ശക്തിപ്പെടുത്തുന്നു,ജീവനുകൾ കൂട്ടുന്നു</p>
-            <a href="Patient/Patient_login.html" class="btn"><button class="book">ബുക്ക്&nbspഅപ്പോയിൻ്റ്മെൻ്റ്&nbsp<i class="fa-solid fa-arrow-right"></i></button></a>
+            <a href="/project/Patient/Patient_login.html" class="btn"><button class="book">ബുക്ക്&nbspഅപ്പോയിൻ്റ്മെൻ്റ്&nbsp<i class="fa-solid fa-arrow-right"></i></button></a>
         </div>
                 
             
@@ -107,16 +107,16 @@
           <div class="column">
             <div class="card">
                 <div><img class="card-img" src="patient.jpg" alt="Card image"></div>
-                <div><a href="Patient/Patient_login.html"><button class="login-btn">രോഗി ലോഗിൻ</button></a></div>
+                <div><a href="/project/Patient/Patient_login.html"><button class="login-btn">രോഗി ലോഗിൻ</button></a></div>
                 </div>
             </div>
           <div class="column">
             <div class="card"><div><img class="card-img" src="patient.jpg" alt="Card image"></div>
-                <div><a href="Doctor/Doctor_login.html"><button class="login-btn">ഡോക്ടർ ലോഗിൻ</button></a></div></div>
+                <div><a href="/project/Doctor/Doctor_login.html"><button class="login-btn">ഡോക്ടർ ലോഗിൻ</button></a></div></div>
           </div>
           <div class="column">
             <div class="card"><div><img class="card-img" src="patient.jpg" alt="Card image"></div>
-                <div><a href="Admin/Admin_login.html"><button class="login-btn">അഡ്മിൻ ലോഗിൻ</button></a></div></div>
+                <div><a href="/project/Admin/Admin_login.html"><button class="login-btn">അഡ്മിൻ ലോഗിൻ</button></a></div></div>
           </div>
           
         </div>
@@ -247,12 +247,12 @@
           <ul class="links">
             <li><a href="">ഹോം</a></li>
             <li><a href="#Departments">വകുപ്പുകൾ</a></li>
-            <li><a href="Patient/Patient_login.html">അപ്പോയിന്റ്മെന്റ് ബുക്ക് ചെയ്യുക</a></li>
+            <li><a href="/project/Patient/Patient_login.html">അപ്പോയിന്റ്മെന്റ് ബുക്ക് ചെയ്യുക</a></li>
             <li><a href="">ഫോറം</a></li>
             <li><a href="#about-us">ഞങ്ങളെപ്പറ്റി</a></li>
             <li><a href="#contact-us">ഞങ്ങളെ സമീപിക്കുക</a></li>
             <li><a href="#logins">ലോഗിൻ</a></li>
-            <li><a href="Patient/patient_registration.html">സൈൻ അപ്പ് ചെയ്യുക</a></li>
+            <li><a href="/project/Patient/patient_registration.html">സൈൻ അപ്പ് ചെയ്യുക</a></li>
           </ul>
         </div>
         <div class="footer-col">

@@ -67,7 +67,7 @@
     <nav class="desktop">
         <ul >
             <li><a href="">CureConnect</a></li>
-            <li class="hideOnMobile"><a href="">Home</a></li>
+            <li class="hideOnMobile"><a href="index.php">Home</a></li>
             <li class="hideOnMobile"><a href="#Departments">Departments</a></li>
             <li class="hideOnMobile"><a href="">Forum</a></li>
             <li class="hideOnMobile"><a href="#about-us">About&nbspUs</a></li>
@@ -246,7 +246,7 @@
         <div class="footer-col">
           <h4>Quick Links</h4>
           <ul class="links">
-            <li><a href="">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="#Departments">Departments</a></li>
             <li><a href="Patient/Patient_login.html">Book Appointment</a></li>
             <li><a href="">Forum</a></li>
