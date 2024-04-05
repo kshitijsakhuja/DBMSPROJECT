@@ -38,7 +38,7 @@
         </li>
         <hr>
         <li>
-          <a href="appointments.html">
+          <a href="appointments.php">
             <i class="fa-regular fa-calendar-check"></i>
             <span class="links_name">Appointments</span>
           </a>
@@ -99,7 +99,7 @@
         </div> -->
         <button class="profile-details dropbtn dropdown" onclick="toggleDropdown()">
           <i class="fa-solid fa-user-large"></i>
-          <span class="admin_name">John Doe</span>
+          <span class="admin_name">Admin</span>
           <i class="bx bx-chevron-down"></i>
         </button>
         <div id="myDropdown" class="dropdown-content">
