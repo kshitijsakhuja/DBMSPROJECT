@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if insertion was successful
     if ($stmt->rowCount() > 0) {
         echo "Doctor added successfully.";
-        header("Location: add-doctor.html");
+        header("Location: doctors.php");
         exit; // Make sure to exit after header redirect
     } else {
         echo "Error adding doctor. Please try again.";

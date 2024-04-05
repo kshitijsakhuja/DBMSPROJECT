@@ -45,14 +45,14 @@
         </li>
         <hr>
         <li>
-          <a href="queries.html">
+          <a href="queries.php">
             <i class="fa-regular fa-circle-question"></i>
             <span class="links_name">Queries</span>
           </a>
         </li>
         <hr>
         <li>
-          <a href="session-logs.html">
+          <a href="session-logs.php">
             <i class="fa-solid fa-list-ul"></i>
             <span class="links_name">Session logs</span>
           </a>
@@ -193,7 +193,7 @@
   <div class = 'searchresults'>
     <h1><center>Manage Doctors:</center><br><hr></h1><br>
     <a href="add-doctor.html"><button><i class="fa-solid fa-plus"></i>Add Doctor</button></a>
-            <a href="specializations.html"><button><i class="fa-solid fa-circle-info"></i>Specializations</button></a>
+            <a href="specializations.php"><button><i class="fa-solid fa-circle-info"></i>Specializations</button></a>
     
             <?php
       $servername = "localhost";

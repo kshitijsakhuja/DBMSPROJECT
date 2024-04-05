@@ -193,7 +193,9 @@
             <img src="3.jpg">
             <div class="text-box">
                 <h2>About Us</h2>
-               <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nisi nisi, egestas accumsan justo et, ultrices luctus lectus. Etiam fermentum pharetra nisi lacinia pretium. Sed eget sollicitudin tellus. Donec ornare nibh elit, id posuere lorem dapibus a. Donec justo lorem, tempus ut luctus nec, porta nec ipsum. Nulla posuere aliquam metus nec viverra. Aliquam erat volutpat. Quisque risus lorem, tincidunt ac nunc id, elementum tincidunt nunc. Duis dui arcu, dapibus sit amet magna quis, sodales placerat risus. Aliquam finibus commodo mauris, non pretium neque scelerisque ut. Nam ut neque quis odio facilisis lacinia in at ante. Phasellus pellentesque euismod arcu id eleifend.</p>-->
+               <p>Welcome to CureConnect, where healthcare access meets innovation. We are dedicated to revolutionizing the healthcare experience through our comprehensive web application. Our platform prioritizes user experience, promoting digital health management, and ensuring data privacy and security. 
+                From finding nearby healthcare facilities to scheduling appointments seamlessly, we empower individuals to take charge of their well-being. With a focus on transparency, community engagement, and inclusivity, we strive to enhance accessibility to medical resources and foster informed decision-making. 
+                Join us in reshaping healthcare for a healthier, more connected world.</p>
             </div>
         </div>
     </section>

@@ -45,14 +45,14 @@
         </li>
         <hr>
         <li>
-          <a href="queries.html">
+          <a href="queries.php">
             <i class="fa-regular fa-circle-question"></i>
             <span class="links_name">Queries</span>
           </a>
         </li>
         <hr>
         <li>
-          <a href="session-logs.html">
+          <a href="session-logs.php">
             <i class="fa-solid fa-list-ul"></i>
             <span class="links_name">Session logs</span>
           </a>

@@ -122,29 +122,98 @@
       </nav>
 
       <div class="home-content">
-        
-        
-              <div class="main ">
-                <div class="book-appointment-container">
-                  
-                
-                <div class="appointment-form">
-                  <h2>Add Specialization</h2><br><hr><br><br>
-                  <form action="add-specialization.php" method="post">
+        <div class="main">
+          <div class="main-head">
+            <h2>Customer Queries:</h2><br><hr><br><br>
+          </div>
+          <div class="table-container">
 
-                    
-                    <div class="form-group">
-                <label for="specialization">Specialization:</label>
-                <input type="text" id="specialization" name="specialization" required>
-            </div><br>
-                    <div class="form-group">
-                      <button type="submit">Add Specialization</button>
-                    </div>
-                  </form>
-                  </div>
-                </div>
-              </div>
-              </div>
+<table>
+  <tr>
+    <th>User ID</th>
+    <th>Email</th>
+    <th>PhoneNumber</th>
+    <th>Message</th>
+    <th>PostingDate</th>
+  </tr>
+  <!-- <tr>
+    <td>3</td>
+    <td>charudua12@test.com</td>
+    <td>2022-11-06 17:36:37</td>
+    <td>06-11-2022 05:36:40 PM</td>
+    <td class="success">Success</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>charudua12@test.com</td>
+    <td>2022-11-06 17:38:56</td>
+    <td>06-11-2022 05:42:53 PM</td>
+    <td class="success">Success</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>anujk123@test.com</td>
+    <td>2022-11-06 17:53:18</td>
+    <td>06-11-2022 05:53:40 PM</td>
+    <td class="success">Success</td>
+  </tr> -->
+  <!-- Add more rows based on the provided data -->
+
+  <?php
+// Database connection details
+$servername = "localhost";
+$username = "root";
+$password = ''; // If your password is empty, leave it as an empty string
+$dbname = "hms";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Fetch data from the database
+$sql = "SELECT * FROM tblcontactus";
+$result = $conn->query($sql);
+
+if ($result === false) {
+    die("Error executing query: " . $conn->error);
+}
+
+if ($result->num_rows > 0) {
+    // Output data of each row
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>" . $row['id'] . "</td>";;
+        echo "<td>" . $row['email'] . "</td>";
+        echo "<td>" . $row['contactno'] . "</td>";
+        echo "<td>" . $row['message'] . "</td>";
+        echo "<td>" . $row['PostingDate'] . "</td>";
+        // echo "<td>" . $row['appointmentTime'] . "</td>";
+        // echo "<td>" . $row['postingDate'] . "</td>";
+        // echo "<td class='status " . ($row['status'] == 'Confirmed' ? 'completed' : 'pending') . "'>" . $row['status'] . "</td>";
+        // echo "<td>
+        //         <button class='edit'><i class='fas fa-pen'></i></button>
+        //         <button class='delete'><i class='fas fa-trash-can'></i></button>
+        //       </td>";
+        echo "</tr>";
+    }
+} else {
+    echo "<tr><td colspan='7'>No appointments found</td></tr>";
+}
+$conn->close();
+?>
+</table>
+
+
+
+
+
+</div>
+        </div>
+      </div>
     <script>
       let sidebar = document.querySelector(".sidebar");
       let sidebarBtn = document.querySelector(".sidebarBtn");

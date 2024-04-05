@@ -45,14 +45,14 @@
         </li>
         <hr>
         <li>
-          <a href="queries.html">
+          <a href="queries.php">
             <i class="fa-regular fa-circle-question"></i>
             <span class="links_name">Queries</span>
           </a>
         </li>
         <hr>
         <li>
-          <a href="session-logs.html">
+          <a href="session-logs.php">
             <i class="fa-solid fa-list-ul"></i>
             <span class="links_name">Session logs</span>
           </a>
@@ -121,26 +121,27 @@
         
       </nav>
 
-     <div class="home-content">
+      <div class="home-content">
         <div class="main">
-          <div class="contact-us">
-            <h2 class="contact-heading">Manage Pages</h2>
-            <hr>
-            <form action="#" class="contact-form">
-              <div class="form-row">
-                <div class="input-data textarea about-us">
-                  <label for="">About Us Description</label>
-                  <textarea rows="16" cols="80" placeholder="Write page description here" required></textarea>     
-                </div>
-              </div>
-              <div class="form-group">
-                      <button type="submit">Save</button>
-              </div>
-            </form>
-
-          </div>
+            <div class="contact-us">
+                <h2 class="contact-heading">Manage Pages</h2>
+                <hr>
+                <form action="pages.php" method="post" class="contact-form">
+                    <div class="form-row">
+                        <div class="input-data textarea about-us">
+                            <label for="">About Us Description</label>
+                            <!-- Correct the name attribute to match the PHP script -->
+                            <textarea rows="16" cols="80" name="Description" placeholder="Write page description here" required></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Save</button>
+                    </div>
+                </form>
+            </div>
         </div>
-      </div>
+    </div>
+    
     </section>
     <script>
       let sidebar = document.querySelector(".sidebar");
