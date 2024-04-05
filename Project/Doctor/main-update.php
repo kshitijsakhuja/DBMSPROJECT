@@ -61,37 +61,30 @@
         </li>
         <hr>
         <li>
-          <a href="main_search.php">
-            <i class="fa-solid fa-user-doctor"></i>
-            <span class="links_name">Search Doctors</span>
+          <a href="search_patient.php">
+            <i class="fa-solid fa-users"></i>
+            <span class="links_name">Search Patients</span>
           </a>
           </li>
           <hr>
-        <li>
-          <a href="book-appointment.html" class="something">
-            <i class="fa-solid fa-calendar-plus"></i>
-            <span class="links_name">Book Appointment</span>
+          <li>
+          <a href="manage-appointment.php">
+            <i class="fa-regular fa-calendar-plus"></i>
+            <span class="links_name">Manage Appointments</span>
           </a>
           </li>
           <hr>
-        <li>
+          <li>
           <a href="appointments-history.php">
-            <i class="fa-solid fa-calendar-check"></i>
+            <i class="fa-regular fa-calendar-check"></i>
             <span class="links_name">Appointments History</span>
           </a>
         </li>
         <hr>
         <li>
-          <a href="medical-history.php">
-            <i class="fa-solid fa-file-medical"></i>
-            <span class="links_name">Medical History</span>
-          </a>
-        </li>
-        <hr>
-        <li>
-          <a href="contact-us.html" class="">
+          <a href="contact-us.html">
             <i class="fa-regular fa-circle-question"></i>
-            <span class="links_name">Raise Queries</span>
+            <span class="links_name">Support</span>
           </a>
         </li>
         <hr>
@@ -109,8 +102,15 @@
           </a>
         </li>
         <hr>
+        <!-- <li>
+          <a href="settings.html">
+            <i class="bx bx-cog"></i>
+            <span class="links_name">Settings</span>
+          </a>
+        </li>
+        <hr> -->
         <li class="log_out">
-          <a href="#">
+          <a href="logout.php">
             <i class="bx bx-log-out"></i>
             <span class="links_name">Log out</span>
           </a>
@@ -142,7 +142,7 @@
             <hr>
           </div>
           <div class="dropdown-item">
-            <a href="patient_reset.html "><i class="fa-solid fa-key"></i>Change Password</a>
+            <a href="doctor_reset.html"><i class="fa-solid fa-key"></i>Change Password</a>
             <hr>
           </div>
         </div>
