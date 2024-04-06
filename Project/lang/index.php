@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
    <script src="https://kit.fontawesome.com/5479b044dc.js" crossorigin="anonymous"></script>
-    <title>CureConnect</title>
+    <title>ക്യൂർക്കണെക്റ്റ്</title>
 
 
 <script type="text/javascript">
@@ -83,7 +83,7 @@
             <a href="lang/index.php">മലയാളം</a>
         </div>
     </li>
-            <li class="hideOnMobile"><a href="/project/Patient/Patient_login.html" class="btn"><button class="book">ലോഗിൻ</button></a></li>
+            <li class="hideOnMobile"><a href="Patient_login.html" class="btn"><button class="book">ലോഗിൻ</button></a></li>
             <li onclick=showSideBar() class="close"><a href="#"><i class="fa-solid fa-bars"></i>
         </ul>
     </nav>
@@ -92,7 +92,7 @@
         <div class="container">
             <h1>ക്യൂർക്കണെക്റ്റ്</h1>
             <p>ആരോഗ്യം ശക്തിപ്പെടുത്തുന്നു,ജീവനുകൾ കൂട്ടുന്നു</p>
-            <a href="/project/Patient/Patient_login.html" class="btn"><button class="book">ബുക്ക്&nbspഅപ്പോയിൻ്റ്മെൻ്റ്&nbsp<i class="fa-solid fa-arrow-right"></i></button></a>
+            <a href="Patient_login.html" class="btn"><button class="book">ബുക്ക്&nbspഅപ്പോയിൻ്റ്മെൻ്റ്&nbsp<i class="fa-solid fa-arrow-right"></i></button></a>
         </div>
                 
             
@@ -107,7 +107,7 @@
           <div class="column">
             <div class="card">
                 <div><img class="card-img" src="patient.jpg" alt="Card image"></div>
-                <div><a href="/project/Patient/Patient_login.html"><button class="login-btn">രോഗി ലോഗിൻ</button></a></div>
+                <div><a href="Patient_login.html"><button class="login-btn">രോഗി ലോഗിൻ</button></a></div>
                 </div>
             </div>
           <div class="column">
@@ -189,10 +189,9 @@
 
     <section id="about-us">
         <div class="wrapper">
-            <img src="3.jpg">
             <div class="text-box">
-                <h2>ഞങ്ങളെപ്പറ്റി അറിയുക</h2>
-               <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nisi nisi, egestas accumsan justo et, ultrices luctus lectus. Etiam fermentum pharetra nisi lacinia pretium. Sed eget sollicitudin tellus. Donec ornare nibh elit, id posuere lorem dapibus a. Donec justo lorem, tempus ut luctus nec, porta nec ipsum. Nulla posuere aliquam metus nec viverra. Aliquam erat volutpat. Quisque risus lorem, tincidunt ac nunc id, elementum tincidunt nunc. Duis dui arcu, dapibus sit amet magna quis, sodales placerat risus. Aliquam finibus commodo mauris, non pretium neque scelerisque ut. Nam ut neque quis odio facilisis lacinia in at ante. Phasellus pellentesque euismod arcu id eleifend.</p>-->
+                <h2>ഞങ്ങളെപ്പറ്റി അറിയുക</h2><br><br>
+               <p><i>ക്യൂർക്കണെക്റ്റ്-ലേക്ക് സ്വാഗതം, അവിടെ ഹെൽത്ത്‌കെയർ ആക്‌സസ് നൂതനത്വവുമായി പൊരുത്തപ്പെടുന്നു. ഞങ്ങളുടെ സമഗ്രമായ വെബ് ആപ്ലിക്കേഷനിലൂടെ ആരോഗ്യ പരിരക്ഷാ അനുഭവത്തിൽ വിപ്ലവം സൃഷ്ടിക്കാൻ ഞങ്ങൾ പ്രതിജ്ഞാബദ്ധരാണ്. ഞങ്ങളുടെ പ്ലാറ്റ്ഫോം ഉപയോക്തൃ അനുഭവത്തിന് മുൻഗണന നൽകുന്നു, ഡിജിറ്റൽ ആരോഗ്യ മാനേജ്മെൻ്റ് പ്രോത്സാഹിപ്പിക്കുന്നു, ഡാറ്റ സ്വകാര്യതയും സുരക്ഷയും ഉറപ്പാക്കുന്നു. സമീപത്തുള്ള ആരോഗ്യ സംരക്ഷണ സൗകര്യങ്ങൾ കണ്ടെത്തുന്നത് മുതൽ അപ്പോയിൻ്റ്‌മെൻ്റുകൾ തടസ്സമില്ലാതെ ഷെഡ്യൂൾ ചെയ്യുന്നത് വരെ, വ്യക്തികളെ അവരുടെ ക്ഷേമത്തിൻ്റെ ചുമതല ഏറ്റെടുക്കാൻ ഞങ്ങൾ പ്രാപ്തരാക്കുന്നു. സുതാര്യത, കമ്മ്യൂണിറ്റി ഇടപഴകൽ, ഉൾക്കൊള്ളൽ എന്നിവയിൽ ശ്രദ്ധ കേന്ദ്രീകരിച്ചുകൊണ്ട്, മെഡിക്കൽ ഉറവിടങ്ങളിലേക്കുള്ള പ്രവേശനക്ഷമത വർദ്ധിപ്പിക്കാനും അറിവുള്ള തീരുമാനങ്ങളെടുക്കൽ പ്രോത്സാഹിപ്പിക്കാനും ഞങ്ങൾ ശ്രമിക്കുന്നു. ആരോഗ്യകരവും കൂടുതൽ ബന്ധിതവുമായ ഒരു ലോകത്തിനായി ആരോഗ്യ സംരക്ഷണത്തെ പുനർനിർമ്മിക്കുന്നതിൽ ഞങ്ങളോടൊപ്പം ചേരുക</i></p>
             </div>
         </div>
     </section>

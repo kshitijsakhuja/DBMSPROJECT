@@ -131,7 +131,7 @@
               <div class="main ">
               <div id="results">
               <div class = 'searchresults'>
-    <h1><br><center>Manage Results:</center></h1><br><hr><br>
+    <h1><br><center>Manage Patients:</center></h1><br><hr><br>
     
     <?php
       $servername = "localhost";
