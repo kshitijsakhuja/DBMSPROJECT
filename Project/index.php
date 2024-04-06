@@ -56,8 +56,8 @@
             <a class="dropbtn">Language</a>
         <div class="dropdown-content">
             <a href="#">English</a>
-            <a href="#">Hindi</a>
-            <a href="lang/malayam.php">Malayalam</a>
+            <a href="#">हिंदी</a>
+            <a href="lang/malayam.php">മലയാളം</a>
         </div>
     </li>
             
@@ -79,8 +79,8 @@
         </button>
         <div class="dropdown-content">
             <a href="index.php">English</a>
-            <a href="#">Hindi</a>
-            <a href="lang/index.php">Malayalam</a>
+            <a href="#">हिंदी</a>
+            <a href="lang/index.php">മലയാളം</a>
         </div>
     </li>
             <li class="hideOnMobile"><a href="Patient/Patient_login.html" class="btn"><button class="book">Log&nbspin</button></a></li>
