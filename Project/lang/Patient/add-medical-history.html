@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CureConnect</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/5479b044dc.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="script.js"></script>
+  </head>
+  <body onload="onload()">
+    <div class="sidebar">
+      <div class="logo-details">
+        <img src="logo.png" alt="logo">
+        <span class="logo_name">CureConnect</span>
+      </div>
+      <ul class="nav-links">
+        <li>
+          <a href="index.html" class="active" >
+            <i class="bx bx-grid-alt"></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="main_search.php">
+            <i class="fa-solid fa-user-doctor"></i>
+            <span class="links_name">Search Doctors</span>
+          </a>
+          </li>
+          <hr>
+        <li>
+          <a href="book-appointment.html" class="something">
+            <i class="fa-solid fa-calendar-plus"></i>
+            <span class="links_name">Book Appointment</span>
+          </a>
+          </li>
+          <hr>
+        <li>
+          <a href="appointments-history.php">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span class="links_name">Appointments History</span>
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="medical-history.php">
+            <i class="fa-solid fa-file-medical"></i>
+            <span class="links_name">Medical History</span>
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="contact-us.html" class="">
+            <i class="fa-regular fa-circle-question"></i>
+            <span class="links_name">Raise Queries</span>
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="main-update.php">
+            <i class="fa-solid fa-circle-user"></i>
+            <span class="links_name">Manage Profile</span>
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="settings.html">
+            <i class="bx bx-cog"></i>
+            <span class="links_name">Settings</span>
+          </a>
+        </li>
+        <hr>
+        <li class="log_out">
+          <a href="#">
+            <i class="bx bx-log-out"></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <section class="home-section">
+      <nav>
+        <div class="sidebar-button">
+          <i class="bx bx-menu sidebarBtn"></i>
+          <span class="dashboard">Dashboard</span>
+        </div>
+        <!--<div class="search-box">
+          <input type="text" placeholder="Search Doctors..." />
+          <i class="bx bx-search"></i>
+        </div>-->
+        <button class="profile-details dropbtn dropdown" onclick="toggleDropdown()">
+          <i class="fa-solid fa-user-large"></i>
+          <span class="admin_name">John Doe</span>
+          <i class="bx bx-chevron-down"></i>
+        </button>
+        <div id="myDropdown" class="dropdown-content">
+          <div class="dropdown-item">
+            <a href="main-update.php"><i class="fa-solid fa-user"></i>Manage Profile</a>
+            <hr>
+          </div>
+          <div class="dropdown-item">
+            <a href="settings.html"><i class="fa-solid fa-gear"></i>Settings</a>
+            <hr>
+          </div>
+          <div class="dropdown-item">
+            <a href="patient_reset.html"><i class="fa-solid fa-key"></i>Change Password</a>
+            <hr>
+          </div>
+        </div>
+        
+        
+        
+      </nav>
+
+      <div class="home-content">
+        
+        
+              <div class="main ">
+                <div class="add-record-form">
+                  <h2>Add Medical Record</h2><br><hr><br><br>
+                  <form action="add-medicalhistory.php" method="POSt">
+                    <div class="form-group">
+                      <label for="visit-date">Record Date</label>
+                      <input type="datetime-local" id="CretionDate" name="CreationDate">
+                    </div><br>
+
+                    <div class="form-group">
+                      <label for="blood-pressure">Blood Pressure</label>
+                      <input type="text" id="BloodPressure" name="BloodPressure" placeholder="Enter Blood Pressure">
+                    </div><br>
+
+                    <div class="form-group">
+                      <label for="weight">Weight</label>
+                      <input type="text" id="Weight" name="Weight" placeholder="Enter Weight">
+                    </div><br>
+
+                    <div class="form-group">
+                      <label for="blood-sugar">Blood Sugar</label>
+                      <input type="text" id="BloodSugar" name="BloodSugar" placeholder="Enter Blood Sugar">
+                    </div><br>
+
+                      <div class="form-group">
+                        <label for="body-temperature">Body Temperature</label>
+                        <input type="text" id="Temperature" name="Temperature" placeholder="Enter Body Temperature">
+                      </div><br>
+
+                      <div class="form-group textarea">
+                        <label id="medical-prescription-label" for="medical-prescription">Medical Prescription</label>
+                         <textarea  id="MedicalPres" name="MedicalPres" placeholder="Enter Medical Prescription"></textarea>
+                      </div>
+                      <br>
+                      <div class="form-group">
+                        <a href="medical-history.html">
+                          <button type="submit">Add Medical Record</button>
+                        </a>
+                      </div>
+</form>
+
+                  
+
+                              </div>
+              </div>
+    <script>
+      let sidebar = document.querySelector(".sidebar");
+      let sidebarBtn = document.querySelector(".sidebarBtn");
+      sidebarBtn.onclick = function () {
+        sidebar.classList.toggle("active");
+        if (sidebar.classList.contains("active")) {
+          sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      };
+    </script>
+  </body>
+</html>

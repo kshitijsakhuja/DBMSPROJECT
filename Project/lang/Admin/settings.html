@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/5479b044dc.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="script.js"></script>
+  </head>
+  <body onload="settingsonload()">
+    <div class="sidebar">
+      <div class="logo-details">
+        <img src="logo.png" alt="logo">
+        <span class="logo_name">CureConnect</span>
+      </div>
+      <ul class="nav-links">
+        <li>
+          <a href="index.html" >
+            <i class="bx bx-grid-alt"></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="doctors.php">
+            <i class="fa-solid fa-user-doctor"></i>
+            <span class="links_name">Doctors</span>
+          </a>
+          </li>
+          <hr>
+        <li>
+          <a href="patients.php">
+            <i class="fa-solid fa-bed"></i>
+            <span class="links_name">Patients</span>
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="appointments.php">
+            <i class="fa-regular fa-calendar-check"></i>
+            <span class="links_name">Appointments</span>
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="queries.html">
+            <i class="fa-regular fa-circle-question"></i>
+            <span class="links_name">Queries</span>
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="session-logs.html">
+            <i class="fa-solid fa-list-ul"></i>
+            <span class="links_name">Session logs</span>
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="report.html">
+            <i class="fa-solid fa-file-lines"></i>
+            <span class="links_name">Reports</span>
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="pages.html">
+            <i class="fa-regular fa-file"></i>
+            <span class="links_name">Pages</span>
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="settings.html">
+            <i class="bx bx-cog"></i>
+            <span class="links_name">Settings</span>
+          </a>
+        </li>
+        <hr>
+        <li class="log_out">
+          <a href="#">
+            <i class="bx bx-log-out"></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <section class="home-section">
+      <nav>
+        <div class="sidebar-button">
+          <i class="bx bx-menu sidebarBtn"></i>
+          <span class="dashboard">Dashboard</span>
+        </div>
+        <!-- <div class="search-box">
+          <input type="text" placeholder="Search Users..." />
+          <i class="bx bx-search"></i>
+        </div> -->
+        <button class="profile-details dropbtn dropdown" onclick="toggleDropdown()">
+          <i class="fa-solid fa-user-large"></i>
+          <span class="admin_name">Admin</span>
+          <i class="bx bx-chevron-down"></i>
+        </button>
+        <div id="myDropdown" class="dropdown-content">
+          <div class="dropdown-item">
+            <a href="manage-profile.html"><i class="fa-solid fa-user"></i>Manage Profile</a>
+            <hr>
+          </div>
+          <div class="dropdown-item">
+            <a href="settings.html"><i class="fa-solid fa-gear"></i>Settings</a>
+            <hr>
+          </div>
+          <div class="dropdown-item">
+            <a href="#"><i class="fa-solid fa-key"></i>Change Password</a>
+            <hr>
+          </div>
+        </div>
+        
+        
+        
+      </nav>
+
+       <div class="home-content">
+        <div class="main">
+          <div class="settings-container">
+                  <h2>Settings</h2><br><hr><br><br>
+                  <form id="theme-settings">
+              <div class="form-group">
+                <label for="fullname">Theme:</label>
+                <div class="radio-buttons">
+                  <input type="radio" id="light-theme-button" name="theme-button" value="light">
+                  <label for="light-theme-button">Light</label>
+                  <input type="radio" id="dark-theme-button" name="theme-button" value="dark">
+                  <label for="dark-theme-button">Dark</label>
+                </div>
+              </div><br>
+              </form>
+                </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      let sidebar = document.querySelector(".sidebar");
+      let sidebarBtn = document.querySelector(".sidebarBtn");
+      sidebarBtn.onclick = function () {
+        sidebar.classList.toggle("active");
+        if (sidebar.classList.contains("active")) {
+          sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+        } else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      };
+    </script>
+  </body>
+</html>

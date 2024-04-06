@@ -83,7 +83,7 @@
             <a href="lang/index.php">മലയാളം</a>
         </div>
     </li>
-            <li class="hideOnMobile"><a href="Patient_login.html" class="btn"><button class="book">ലോഗിൻ</button></a></li>
+            <li class="hideOnMobile"><a href="Patient/Patient_login.html" class="btn"><button class="book">ലോഗിൻ</button></a></li>
             <li onclick=showSideBar() class="close"><a href="#"><i class="fa-solid fa-bars"></i>
         </ul>
     </nav>
@@ -92,7 +92,7 @@
         <div class="container">
             <h1>ക്യൂർക്കണെക്റ്റ്</h1>
             <p>ആരോഗ്യം ശക്തിപ്പെടുത്തുന്നു,ജീവനുകൾ കൂട്ടുന്നു</p>
-            <a href="Patient_login.html" class="btn"><button class="book">ബുക്ക്&nbspഅപ്പോയിൻ്റ്മെൻ്റ്&nbsp<i class="fa-solid fa-arrow-right"></i></button></a>
+            <a href="Patient/Patient_login.html" class="btn"><button class="book">ബുക്ക്&nbspഅപ്പോയിൻ്റ്മെൻ്റ്&nbsp<i class="fa-solid fa-arrow-right"></i></button></a>
         </div>
                 
             
@@ -107,7 +107,7 @@
           <div class="column">
             <div class="card">
                 <div><img class="card-img" src="patient.jpg" alt="Card image"></div>
-                <div><a href="Patient_login.html"><button class="login-btn">രോഗി ലോഗിൻ</button></a></div>
+                <div><a href="/project/Patient/Patient_login.html"><button class="login-btn">രോഗി ലോഗിൻ</button></a></div>
                 </div>
             </div>
           <div class="column">

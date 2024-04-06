@@ -1,0 +1,870 @@
+:root {
+  --light-primary-color: white; /* Define a variable named primary-color */
+  --light-secondary-color: #6c757d; /* Define a variable named secondary-color */
+  --light-main-color: #00ab9f;
+}
+
+
+
+/* Googlefont Poppins CDN Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+}
+
+/*side bar*/
+
+.light-mode .sidebar .nav-links li.active a:hover a:active {
+  background-color: black; /* Change background color for active link */
+  color: white; /* Change text color for active link */
+}
+.dark-mode .sidebar .nav-links li.active a:hover a:active {
+  background-color: white; /* Change background color for active link */
+  color: black; /* Change text color for active link */
+}
+
+.sidebar{
+  position: fixed;
+  height: 100%;
+  width: 240px;
+  background: #00ab9f;
+  transition: all 0.5s ease;
+}
+.dark-mode .sidebar{
+  background-color: black;
+}
+.light-mode .sidebar hr{
+  border-color: #15706a;
+}
+.dark-mode .sidebar hr{
+  border-color: #00ab9f;
+}
+.sidebar.active{
+  width: 60px;
+}
+.sidebar .logo-details{
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+.sidebar .logo-details img{
+  width: 40px;
+  height: auto;
+  margin: 10px;
+}
+.dark-mode .sidebar .logo-details img{
+  color: red;
+}
+.light-mode .sidebar .logo-details i{
+  color: var(--light-primary-color);
+}
+.dark-mode .sidebar .logo-details i{
+  color: white;
+}
+.sidebar .logo-details i{
+  font-size: 28px;
+  font-weight: 500;
+  min-width: 60px;
+  text-align: center
+}
+.sidebar .logo-details .logo_name{
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+}
+.sidebar .nav-links{
+  margin-top: 10px;
+}
+.sidebar .nav-links li{
+  position: relative;
+  list-style: none;
+  height: 50px;
+}
+.sidebar .nav-links li a{
+  color: white;
+}
+.light-mode .sidebar .nav-links li a{
+  background-color: #00ab9f;
+
+}
+.dark-mode .sidebar .nav-links li a{
+  background-color: black;
+}
+.sidebar .nav-links li a{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.light-mode .sidebar .nav-links li a.active{
+  background: black;
+}
+.light-mode .sidebar .nav-links li a:hover{
+  background: black;
+}
+.dark-mode .sidebar .nav-links li a.active{
+  background: white;
+  color: black;
+}
+.dark-mode .sidebar .nav-links li a:hover{
+  background: white;
+  color: black;
+}
+.sidebar .nav-links li i{
+  min-width: 60px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.sidebar .nav-links li a .links_name{
+  font-size: 15px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.light-mode .sidebar .nav-links li a.active{
+  background-color: black;
+  color: white;
+}
+.dark-mode .sidebar .nav-links li a.active{
+  background-color: white;
+  color: black;
+}
+.sidebar .nav-links .log_out{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.light-mode .home-section{
+  background: #f5f5f5;
+}
+.dark-mode .home-section{
+  background: #1b1c1c;
+}
+.home-section{
+  position: relative;
+  min-height: 100vh;
+  width: calc(100% - 240px);
+  left: 240px;
+  transition: all 0.5s ease;
+}
+
+.sidebar.active ~ .home-section{
+  width: calc(100% - 60px);
+  left: 60px;
+}
+.light-mode .home-section nav{
+  background: #fff;
+}
+.dark-mode .home-section nav{
+  background: black;
+  color: white;
+}
+
+.home-section nav{
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: calc(100% - 240px);
+  left: 240px;
+  z-index: 100;
+  padding: 0 20px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+}
+.sidebar.active ~ .home-section nav{
+  left: 60px;
+  width: calc(100% - 60px);
+}
+.home-section nav .sidebar-button{
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 500;
+}
+nav .sidebar-button i{
+  font-size: 35px;
+  margin-right: 10px;
+}
+.dark-mode nav .sidebar-button i{
+  color: #00ab9f;
+}
+.home-section nav .search-box{
+  position: relative;
+  height: 50px;
+  max-width: 550px;
+  width: 100%;
+  margin: 0 20px;
+}
+.light-mode nav .search-box input{
+  background: #F5F6FA;
+  border: 2px solid #EFEEF1;
+}
+.dark-mode nav .search-box input{
+  background: #1b1c1c;
+  border: 2px solid #1b1c1c;
+}
+nav .search-box input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border-radius: 6px;
+  font-size: 18px;
+  padding: 0 15px;
+}
+.light-mode nav .search-box .bx-search{
+  background: #00ab9f;
+}
+.dark-mode nav .search-box .bx-search{
+  background: #00ab9f;
+}
+nav .search-box .bx-search{
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+  transition: all 0.4 ease;
+}
+
+/* Dropdown container */
+.profile-details {
+  position: relative;
+}
+
+.dropbtn {
+  cursor: pointer;
+}
+
+/* Dropdown content (hidden by default) */
+.light-mode .dropdown-content {
+
+  background-color: #f9f9f9;
+}
+.dark-mode .dropdown-content {
+
+  background-color: black;
+  color: white;
+
+}
+.dropdown-content {
+
+  width: 200px;
+  display: none;
+  position: absolute;
+  top: calc(100% ); /* Align dropdown content below the profile details with a small gap */
+  right: 0;
+  margin-right: 30px;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
+  
+}
+
+.light-mode .dropdown-item:hover {
+  background-color: #00ab9f;
+  color: white; 
+}
+.dark-mode .dropdown-item:hover {
+  background-color: #00ab9f;
+  color: white; 
+}
+.light-mode .dropdown-item a {
+  color: black;
+}
+.dark-mode .dropdown-item a {
+  color: white;
+}
+
+.dropdown-item a {
+  display: block;
+  padding: 5px;
+  
+}
+.dropdown-item a:hover{
+  color: white;
+}
+.submenu hr{
+  margin: 10px;
+}
+.dropdown-content i{
+  padding: 5px;
+}
+/* Show the dropdown content when dropdown is active */
+.dropdown-active {
+  display: block;
+}
+.light-mode .home-section nav .profile-details{
+  background: #00ab9f;
+  border-color:  #EFEEF1;
+}
+.dark-mode .home-section nav .profile-details{
+  background: #00ab9f;
+  border-color:  #00ab9f;
+}
+.home-section nav .profile-details{
+  display: flex;
+  align-items: center;
+  color: white;
+  border: 2px solid;
+  border-radius: 6px;
+  height: 50px;
+  min-width: 190px;
+  padding: 0 15px 0 2px;
+  justify-content: space-between;
+}
+
+
+nav .profile-details .admin_name{
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0 10px;
+  white-space: nowrap;
+  padding-left: 10px;
+}
+nav .profile-details i{
+  padding-left: 15px;
+  font-size: 25px;
+  color: black;
+}
+.home-section .home-content{
+  position: relative;
+  padding-top: 104px;
+}
+
+
+/* Responsive Media Query */
+@media (max-width: 1240px) {
+  .sidebar{
+    width: 60px;
+  }
+  .sidebar.active{
+    width: 220px;
+  }
+  .home-section{
+    width: calc(100% - 60px);
+    left: 60px;
+  }
+  .sidebar.active ~ .home-section{
+    left: 220px;
+    width: calc(100% - 220px);
+    overflow: hidden;
+  }
+  .home-section nav{
+    width: calc(100% - 60px);
+    left: 60px;
+  }
+  .sidebar.active ~ .home-section nav{
+    width: calc(100% - 220px);
+    left: 220px;
+  }
+}
+  
+
+@media (max-width: 700px) {
+  nav .sidebar-button .dashboard,
+  nav .profile-details .admin_name,
+  nav .profile-details .bx-chevron-down{
+    display: none;
+  }
+    .home-section nav .profile-details{
+    height: 50px;
+    min-width: 40px;
+    border: none;
+  }
+    .dark-mode .home-section nav .profile-details i{
+      color: #00ab9f;
+    }
+    .dark-mode .home-section nav .profile-details{
+      background-color: black;
+    }
+    .light-mode .home-section nav .profile-details{
+      background-color: white;
+    }
+  
+
+  .profile-details .fa-user-large{
+    padding: 0;
+    align-items: center;
+  }
+}
+@media (max-width: 550px) {
+  .sidebar.active ~ .home-section nav .profile-details{
+    display: none;
+  }
+}
+@media (max-width: 400px) {
+  .sidebar{
+    width: 0;
+  }
+  .sidebar.active{
+    width: 60px;
+  }
+  .home-section{
+    width: 100%;
+    left: 0;
+  }
+  .sidebar.active ~ .home-section{
+    left: 60px;
+    width: calc(100% - 60px);
+  }
+  .home-section nav{
+    width: 100%;
+    left: 0;
+  }
+  .sidebar.active ~ .home-section nav{
+    left: 60px;
+    width: calc(100% - 60px);
+  }
+}
+
+
+/*dashboard*/
+
+.box-container{
+  margin-left:10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
+	gap: 15px;
+}
+.light-mode .box-container .box{
+  background: white;
+}
+.dark-mode .box-container .box{
+  background: black;
+}
+.box-container .box{
+	box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+	border-radius: 5px;
+	text-align: center;
+	padding: 10px 10px;
+
+}
+
+
+.box-container .box i{
+  padding-top: 60px;
+	color: #00ab9f;
+}
+.light-mode a .box h3{
+  color: black;
+}
+.dark-mode a .box h3{
+  color: white;
+}
+a .box h3{
+	font-size: 22px;
+	padding: 10px 0;
+}
+.box-container a{
+	text-decoration: none;
+}
+.light-mode .box:hover{
+  background-color: #f0f5f4;
+}
+.dark-mode .box:hover{
+  background-color: #0e0f0f;
+}
+.box-container h1{
+	margin: 3vw;
+	margin-top: 6vw;
+	font-size: 2.5vw;
+	color: #00ab9f;
+	text-align: center ;
+}
+
+.box-container h6{
+  color: #15706a;
+  padding-top: 3px;
+  padding-bottom: 10px;
+}
+
+/*appointment booking*/
+
+.light-mode .main {
+  background-color: white;
+}
+.dark-mode .main {
+  background-color: black;
+  color: white;
+}
+.main {
+  margin: 15px;
+  margin-top: 0;
+  padding: 30px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add box shadow */
+  border-radius: 10px;
+}
+
+.book-appointment-container{
+  display: flex;
+  justify-content: space-around;
+}
+.appointment-form{
+  width: 80%;
+}
+.main form{
+  display: block;
+}
+.light-mode .main button{
+  background-color: #00ab9f;
+  color: white;
+}
+.dark-mode .main button{
+  background-color: #00ab9f;
+  color: white;
+}
+.main button{
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  padding: 10px;
+  grid-column: span 2;
+}
+
+.light-mode .main button:hover{
+  background-color: black;
+
+}
+.dark-mode .main button:hover{
+  background-color: white;
+  color: black;
+
+}
+.main h2 {
+  text-align: center;
+}
+.main hr{
+  border-color: #00ab9f;
+}
+.main label{
+  font-weight: bold;
+  float: left;
+}
+
+.form-group {
+  margin: 20px;
+  margin-bottom: 30px;
+}
+.light-mode .main input,.light-mode .main select{
+  background-color: white;
+  color-scheme: light;
+}
+.dark-mode .main input,.dark-mode .main select{
+  background-color: black;
+  color-scheme: dark;
+}
+.dark-mode input[type="date"]::-webkit-calendar-picker-indicator,
+        input[type="time"]::-webkit-calendar-picker-indicator {
+            /* Change the color */
+            color: white !important; /* Change this to the desired color */
+        }
+.main input, .main select{
+  float: right;
+  padding: 5px;
+  width: 200px;
+  text-align: center;
+  border: 2px solid #00ab9f;
+}
+
+
+/* Change the background color of the options when hovering */
+.light-mode .main select option:hover {
+  background-color: black; /* Example color */
+}
+.dark-mode .main select option:hover {
+  background-color: white;
+  color: black; /* Example color */
+}
+
+/*Contact us*/
+
+
+.main .text {
+  text-align: center;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.main form {
+  padding: 10px 0 0 0;
+}
+
+.main form .form-row {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  margin: 20px 0;
+}
+
+.form-row .input-data {
+  flex: 1; /* Grow to fill available space */
+  margin: 0 10px; /* Add space between input fields */
+}
+
+.input-data input,
+.textarea textarea {
+  width: 100%;
+  height: 40px; /* Adjust height as needed */
+  font-size: 17px;
+  border: 2px solid #00ab9f;
+}
+
+.textarea textarea {
+  height: 100px; /* Adjust height of textarea */
+  
+}
+.about-us textarea {
+  height: 270px;
+  font-size: 17px;
+  border: 2px solid #00ab9f;
+}
+
+.light-mode.input-data label,
+.light-mode.textarea label {
+  color: black;
+}
+.dark-mode.input-data label,
+.dark-mode.textarea label {
+  color: white;
+}
+.input-data label,
+.textarea label {
+  font-size: 16px;
+}
+
+.submit-btn .input-data {
+  width: 100%; /* Make submit button full width */
+  
+}
+.light-mode .submit-btn .input-data input {
+  background: #00ab9f;
+}
+.dark-mode .submit-btn .input-data input {
+  background: #00ab9f;
+}
+
+.submit-btn .input-data input {
+  color: white;
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+}
+
+
+
+.light-mode .submit-btn .input-data input:hover {
+  background: black; /* Adjust hover background color */
+  color: white;
+}
+.dark-mode .submit-btn .input-data input:hover {
+  background: white; /* Adjust hover background color */
+  color: black;
+}
+
+/* Media query for tablets */
+@media (max-width: 768px) {
+  .main .text {
+    font-size: 30px;
+  }
+
+  .main form .form-row {
+    flex-direction: column; /* Stack form rows vertically */
+  }
+
+  .form-row .input-data {
+    margin: 20px 0; /* Add space between stacked input fields */
+  }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+  .main .text {
+    font-size: 25px;
+  }
+
+  .input-data label,
+  .textarea label {
+    font-size: 14px; /* Reduce label font size */
+  }
+
+  .input-data input,
+  .textarea textarea {
+    font-size: 16px; /* Increase input font size */
+  }
+
+  .textarea textarea {
+    height: 80px; /* Reduce height of textarea */
+  }
+}
+.main .contact-heading {
+  text-align: center; /* Center the heading */
+  font-size: 35px;
+  font-weight: 600;
+  width: 100%;
+}
+
+.main .contact-heading + hr {
+  width: 100%; /* Set the width of the hr */
+  margin: 10px auto; /* Center the hr and add margin */
+  border-color: #00ab9f; /* Change the color of the hr */
+}
+.contact-us{
+  display: block;
+}
+.contact-form{
+  padding: 0;
+}
+
+/* appointment history*/
+.main-head{
+  display: block;
+  width: 100%;
+
+}
+.main table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.main th, .main td {
+  border: 1px solid black;
+  padding: 5px;
+  text-align: center;
+  text-overflow: auto;
+  padding: 5px;
+  white-space: nowrap;
+}
+
+.main th {
+  background-color: #00ab9f;
+  color: black;
+}
+.light-mode .main tr:hover{
+  background-color: #f5f5f5;
+}
+.dark-mode .main tr:hover{
+  background-color: #0e0f0f;
+}
+.main tr button{;
+  padding: 3px auto auto;
+  border: none;
+  border-radius: 4px;
+  margin: 4px;
+}
+.table-container {
+  /* Adjust the height as needed */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+.light-mode .main tr button.delete {
+  background-color: black;
+}
+.dark-mode .main tr button.delete {
+  background-color: red;
+}
+.main-head button{
+  margin-bottom: 30px;
+}
+
+.status {
+  font-weight: bold;
+  text-align: center;
+  padding: 5px 10px;
+}
+
+.status.pending {
+  color: red;
+}
+
+.status.completed {
+  color: green;
+}
+#medical-prescription {
+  float: right;
+  min-width: 200px;
+}
+
+#medical-prescription-label {
+  float: left;
+  font-size: 15px;
+}
+.add-record-form .form-group button {
+  margin-top: 30px;
+  margin-left: calc(50% - 90px); 
+}
+.dark-mode .textarea textarea{
+  background-color: black;
+  color: white;
+}
+textarea::placeholder {
+  text-align: center; /* Set text alignment to center for placeholder */
+}
+.main-head i{
+  padding: 6px;
+}
+
+/*settings*/
+.settings-sidebar{
+  width: 200px;
+}
+/*manage profile*/
+.radio-buttons{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.radio-buttons input[type="radio"] {
+  display: none;
+}
+
+.radio-buttons label {
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.radio-buttons input[type="radio"] + label:before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #00ab9f;
+  border-radius: 50%;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.radio-buttons input[type="radio"]:checked + label:before {
+  background-color: #00ab9f;
+}
+
+#addDoctorForm textarea{
+  width: 200px;
+  float: right;
+  border: 2px solid #00ab9f;
+}
+.light-mode #addDoctorForm textarea{
+  background-color: white;
+}
+.dark-mode #addDoctorForm textarea{
+  background-color: black;
+}
+.success{
+  color: green;
+}
+.failed{
+  color: red;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forgot Password</title>
+<style>
+    /* Include the existing styles from your login and registration pages */
+
+body {
+  background-color: #00ab9f; /* turquoise color */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  
+  background-color: #ccc;
+  width: 250px;
+  margin: 100px auto;
+  border-radius: 15px;
+  border: 2px solid #000000;
+  padding: 70px;
+  text-align: center;
+}
+
+h1, h2{
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="tel"],
+input[type="email"] {
+  width: fit-content;
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+button[type="submit"] {
+  background-color: #00ab9f; /* green color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 14px;
+}
+
+a {
+  color: #0095ff; /* blue color */
+  text-decoration: none;
+}
+
+</style>
+</head>
+<body>
+  <i>
+<div class="container">
+  <h1>DOCTOR</h1>
+  <h2>Forgot Password?</h2>
+  <form action="forget-password.php" method="post">
+    <label for="phonenumber">Mobile Number:</label>
+    <input type="tel" id="phonenumber" name="contactno" placeholder="Registered Mobile number..">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Registered email..">
+    
+    <button type="submit">SEND RESET LINK</button>
+  </form>
+  <p>Remembered your password? <a href="Doctor_login.html">Log in</a></p>
+</div>
+</body>
+</html>

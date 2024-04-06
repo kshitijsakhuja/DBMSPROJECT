@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>രജിസ്ട്രേഷൻ ഫോം</title>
+<style>
+    body {
+  background-color: #00ab9f;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background-color: #ccc;
+  width: 400px;
+  margin: 50px auto;
+  border: 2px solid #000000;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"] {
+  width: fit-content;
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+button[type="submit"] {
+  background-color: #00ab9f;
+  color: white;
+  padding: 15px 70px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.forgot-password {
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+.forgot-password a {
+  color: #0b57d0;
+  text-decoration: none;
+}
+
+p {
+  font-size: 14px;
+}
+
+a {
+  color: #0b57d0;
+  text-decoration: none;
+}
+
+.clip-radio input[type="radio"],
+.clip-radio label {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-right: 10px; /* Adjust spacing between radio buttons and labels as needed */
+}
+
+
+</style>
+</head>
+<body onload="onload()">
+    <i>
+<div class="container">
+  <h1>ക്യൂർക്കണെക്റ്റ്</h1>
+  <h2>രോഗി രജിസ്ട്രേഷൻ</h2>
+  <form action="registration.php" method="post">
+    <label for="fullname">പൂർണ്ണ പേര്:</label>
+    <input type="text" id="fullname" name="fullname" placeholder="നിങ്ങളുടെ പൂർണ്ണ പേര്.." required>
+
+    <label for="address">വിലാസം:</label>
+    <input type="text" id="address" name="address" placeholder="നിങ്ങളുടെ വിലാസം.." required>
+
+    <label for="address">നഗരം:</label>
+    <input type="text" id="city" name="city" placeholder="നിങ്ങളുടെ നഗരം" required>
+
+    <label for="email">ഇമെയിൽ:</label>
+    <input type="email" id="email" name="email" placeholder="നിങ്ങളുടെ ഇമെയിൽ.." required>
+
+    <label for="password">പാസ്‌വേഡ്:</label>
+    <input type="password" id="password" name="password" placeholder="നിങ്ങളുടെ പാസ്‌വേഡ്.." required>
+
+    <label for="confirmpassword">പാസ്‌വേഡ് ഉറപ്പാക്കുക:</label>
+    <input type="password" id="confirmpassword" name="confirmpassword" placeholder="നിങ്ങളുടെ പാസ്‌വേഡ് ഉറപ്പാക്കുക.." required>
+
+    <div class="form-group">
+              <label for="gender">ലിംഗം:</label>
+								<div class="clip-radio radio-primary">
+                    <input type="radio" id="rg-female" name="gender" value="female" >
+                    <label for="rg-female">
+                      സ്ത്രീ
+                    </label>
+                    <input type="radio" id="rg-male" name="gender" value="male">
+                    <label for="rg-male">
+                      പുരുഷൻ
+                    </label>
+								</div>
+							</div>
+
+    <button type="submit">രജിസ്റ്റർ ചെയ്യുക</button>
+  </form>
+  <p>അക്കൗണ്ട് ഉണ്ടോ? <a href="Patient_login.html">ലോഗിൻ</a></p>
+</div>
+</body>
+</html>
