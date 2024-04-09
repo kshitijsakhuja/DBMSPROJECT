@@ -190,7 +190,7 @@
 
     <section id="about-us">
         <div class="wrapper">
-            <img src="3.jpg">
+            <!-- <img src="3.jpg"> -->
             <div class="text-box">
                 <h2>About Us</h2>
                <p>Welcome to CureConnect, where healthcare access meets innovation. We are dedicated to revolutionizing the healthcare experience through our comprehensive web application. Our platform prioritizes user experience, promoting digital health management, and ensuring data privacy and security. 
