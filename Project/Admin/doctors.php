@@ -229,16 +229,20 @@
         if ($result->num_rows > 0) {
           // Output data of each row
           while ($row = $result->fetch_assoc()) {
-            echo '<tr>
-                      <td>' . $row["id"] . '</td>
-                      <td>' . $row["specialization"] . '</td>
-                      <td>' . $row["doctorName"] . '</td>
-                      <td>' . $row["creationDate"] . '</td>
-                      <td>
-                          <button class="edit"><i class="fas fa-pen"></i></button>
-                          <button class="delete"><i class="fas fa-trash-alt"></i></button>
-                      </td>
-                    </tr>';
+            echo "<tr>";
+echo "<td>" . $row['id'] . "</td>";
+echo "<td>" . $row["specialization"] . "</td>";
+echo "<td>" . $row["doctorName"] . "</td>";
+echo "<td>" . $row["creationDate"] . "</td>";
+echo "<td>
+        <button class='edit'><i class='fas fa-pen'></i></button>
+
+        <a href='delete_doctor.php? deleteid=".$row['id']."'> 
+        <button class='delete'><i class='fas fa-trash-alt'></i></button>
+        </a>
+      </td>";
+echo "</tr>";
+
           }
         } else {
           echo "<tr><td colspan='4'>No results found</td></tr>";

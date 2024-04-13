@@ -112,11 +112,11 @@
             </div>
           <div class="column">
             <div class="card"><div><img class="card-img" src="patient.jpg" alt="Card image"></div>
-                <div><a href="/project/Doctor/Doctor_login.html"><button class="login-btn">ഡോക്ടർ ലോഗിൻ</button></a></div></div>
+                <div><a href="Doctor/Doctor_login.html"><button class="login-btn">ഡോക്ടർ ലോഗിൻ</button></a></div></div>
           </div>
           <div class="column">
             <div class="card"><div><img class="card-img" src="patient.jpg" alt="Card image"></div>
-                <div><a href="/project/Admin/Admin_login.html"><button class="login-btn">അഡ്മിൻ ലോഗിൻ</button></a></div></div>
+                <div><a href="Admin/Admin_login.html"><button class="login-btn">അഡ്മിൻ ലോഗിൻ</button></a></div></div>
           </div>
           
         </div>

@@ -204,7 +204,7 @@ if ($result->num_rows > 0) {
     // Output data of each row
     while ($row = $result->fetch_assoc()) {
         echo "<tr>";
-        echo "<td>" . $row['id'] . "</td>";;
+        echo "<td>" . $row['id'] . "</td>";
         echo "<td>" . $row['doctor'] . "</td>";
         echo "<td>" . $row['doctorSpecialization'] . "</td>";
         echo "<td>" . $row['appointmentDate'] . "</td>";
@@ -212,8 +212,12 @@ if ($result->num_rows > 0) {
         echo "<td>" . $row['postingDate'] . "</td>";
         // echo "<td class='status " . ($row['status'] == 'Confirmed' ? 'completed' : 'pending') . "'>" . $row['status'] . "</td>";
         echo "<td>
+        <a href='update.php? updateid=".$row['id']."'> 
                 <button class='edit'><i class='fas fa-pen'></i></button>
+                </a>
+        <a href='delete.php? deleteid=".$row['id']."'>        
                 <button class='delete'><i class='fas fa-trash-can'></i></button>
+                </a>
               </td>";
         echo "</tr>";
     }
@@ -223,9 +227,6 @@ if ($result->num_rows > 0) {
 $conn->close();
 ?>
 </table>
-
-
-
 
 </div>
         </div>

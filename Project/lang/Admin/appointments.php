@@ -13,85 +13,85 @@
     <div class="sidebar">
       <div class="logo-details">
         <img src="logo.png" alt="logo">
-        <span class="logo_name">CureConnect</span>
+        <span class="logo_name">ക്യൂർക്കണെക്റ്റ്</span>
       </div>
       <ul class="nav-links">
         <li>
           <a href="index.html" >
             <i class="bx bx-grid-alt"></i>
-            <span class="links_name">Dashboard</span>
+            <span class="links_name">ഡാഷ്ബോർഡ്</span>
           </a>
         </li>
         <hr>
         <li>
           <a href="doctors.php">
             <i class="fa-solid fa-user-doctor"></i>
-            <span class="links_name">Doctors</span>
+            <span class="links_name">ഡോക്ടർമാർ</span>
           </a>
           </li>
           <hr>
         <li>
           <a href="patients.php">
             <i class="fa-solid fa-bed"></i>
-            <span class="links_name">Patients</span>
+            <span class="links_name">രോഗികൾ</span>
           </a>
         </li>
         <hr>
         <li>
           <a href="appointments.php">
             <i class="fa-regular fa-calendar-check"></i>
-            <span class="links_name">Appointments</span>
+            <span class="links_name">അപ്പോയിന്റ്മെന്റുകൾ</span>
           </a>
         </li>
         <hr>
         <li>
           <a href="queries.html">
             <i class="fa-regular fa-circle-question"></i>
-            <span class="links_name">Queries</span>
+            <span class="links_name">അന്വേഷണങ്ങൾ</span>
           </a>
         </li>
         <hr>
         <li>
           <a href="session-logs.html">
             <i class="fa-solid fa-list-ul"></i>
-            <span class="links_name">Session logs</span>
+            <span class="links_name">സെഷൻ <br>ലോഗുകൾ</span>
           </a>
         </li>
         <hr>
         <li>
           <a href="report.html">
             <i class="fa-solid fa-file-lines"></i>
-            <span class="links_name">Reports</span>
+            <span class="links_name">റിപ്പോർട്ടുകൾ</span>
           </a>
         </li>
         <hr>
         <li>
           <a href="pages.html">
             <i class="fa-regular fa-file"></i>
-            <span class="links_name">Pages</span>
+            <span class="links_name">പേജുകൾ</span>
           </a>
         </li>
         <hr>
         <li>
           <a href="settings.html">
             <i class="bx bx-cog"></i>
-            <span class="links_name">Settings</span>
+            <span class="links_name">സെറ്റിംഗ്സ്</span>
           </a>
         </li>
         <hr>
         <li class="log_out">
-          <a href="#">
+          <a href="logout.php">
             <i class="bx bx-log-out"></i>
-            <span class="links_name">Log out</span>
+            <span class="links_name">ലോഗ് ഔട്ട്</span>
           </a>
         </li>
       </ul>
     </div>
     <section class="home-section">
-      <nav>
+    <nav>
         <div class="sidebar-button">
           <i class="bx bx-menu sidebarBtn"></i>
-          <span class="dashboard">Dashboard</span>
+          <span class="dashboard">ഡാഷ്ബോർഡ്</span>
         </div>
         <!-- <div class="search-box">
           <input type="text" placeholder="Search Users..." />
@@ -99,20 +99,20 @@
         </div> -->
         <button class="profile-details dropbtn dropdown" onclick="toggleDropdown()">
           <i class="fa-solid fa-user-large"></i>
-          <span class="admin_name">Admin</span>
+          <span class="admin_name">അഡ്മിൻ</span>
           <i class="bx bx-chevron-down"></i>
         </button>
         <div id="myDropdown" class="dropdown-content">
           <div class="dropdown-item">
-            <a href="manage-profile.html"><i class="fa-solid fa-user"></i>Manage Profile</a>
+            <a href="manage-profile.html"><i class="fa-solid fa-user"></i>പ്രൊഫൈൽ മാനേജ് ചെയ്യുക</a>
             <hr>
           </div>
           <div class="dropdown-item">
-            <a href="settings.html"><i class="fa-solid fa-gear"></i>Settings</a>
+            <a href="settings.html"><i class="fa-solid fa-gear"></i>സെറ്റിംഗ്സ്</a>
             <hr>
           </div>
           <div class="dropdown-item">
-            <a href="#"><i class="fa-solid fa-key"></i>Change Password</a>
+            <a href="#"><i class="fa-solid fa-key"></i>പാസ്‌വേഡ് മാറ്റുക</a>
             <hr>
           </div>
         </div>
@@ -124,19 +124,19 @@
       <div class="home-content">
         <div class="main">
           <div class="main-head">
-            <h2>Appointments History</h2><br><hr><br><br>
+            <h2>അപ്പോയിന്റ്മെന്റ് ഹിസ്റ്ററി</h2><br><hr><br><br>
           </div>
           <div class="table-container">
 
 <table>
   <tr>
-    <th>Appointment ID</th>
-    <th>Doctor Name</th>
-    <th>Specialization</th>
-    <th>Appointment Date</th>
-    <th>Appointment Time</th>
-    <th>Creation DateTime</th>
-    <th>Action</th>
+    <th>അപ്പോയിൻ്റ്മെൻ്റ് <br>ഐഡി</th>
+    <th>ഡോക്ടറുടെ പേര്</th>
+    <th>സ്പെഷ്യലൈസേഷൻ</th>
+    <th>അപ്പോയിൻ്റ്മെൻ്റ് <br>തീയതി</th>
+    <th>അപ്പോയിൻ്റ്മെൻ്റ് <br>സമയം</th>
+    <th>സൃഷ്ടിയുടെ <br>തീയതിയും സമയവും</th>
+    <th>നടപടി</th>
   </tr>
   <!-- <tr>
     <td>1</td>

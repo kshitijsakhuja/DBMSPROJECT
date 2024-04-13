@@ -50,99 +50,92 @@
   <div class="sidebar">
       <div class="logo-details">
         <img src="logo.png" alt="logo">
-        <span class="logo_name">CureConnect</span>
+        <span class="logo_name">ക്യൂർക്കണെക്റ്റ്</span>
       </div>
       <ul class="nav-links">
         <li>
-          <a href="index.html" class="active" >
+          <a href="index.html" >
             <i class="bx bx-grid-alt"></i>
-            <span class="links_name">Dashboard</span>
+            <span class="links_name">ഡാഷ്ബോർഡ്</span>
           </a>
         </li>
         <hr>
         <li>
           <a href="search_patient.php">
             <i class="fa-solid fa-users"></i>
-            <span class="links_name">Search Patients</span>
+            <span class="links_name">രോഗിയെ തിരയുക</span>
           </a>
           </li>
           <hr>
-          <li>
+        <li>
           <a href="manage-appointment.php">
             <i class="fa-regular fa-calendar-plus"></i>
-            <span class="links_name">Manage Appointments</span>
+            <span class="links_name">അപ്പോയിൻ്റ്മെൻ്റ്<br>മാനേജ് ചെയ്യുക</span>
           </a>
           </li>
           <hr>
-          <li>
+        <li>
           <a href="appointments-history.php">
             <i class="fa-regular fa-calendar-check"></i>
-            <span class="links_name">Appointments History</span>
+            <span class="links_name">അപ്പോയിന്റ്മെന്റ്<br>ഹിസ്റ്ററി</span>
           </a>
         </li>
         <hr>
         <li>
           <a href="contact-us.html">
             <i class="fa-regular fa-circle-question"></i>
-            <span class="links_name">Support</span>
+            <span class="links_name">ഞങ്ങളെ ബന്ധപ്പെടുക</span>
           </a>
         </li>
         <hr>
         <li>
           <a href="main-update.php">
             <i class="fa-solid fa-circle-user"></i>
-            <span class="links_name">Manage Profile</span>
+            <span class="links_name">പ്രൊഫൈൽ<br>മാനേജ് ചെയ്യുക</span>
           </a>
         </li>
         <hr>
         <li>
           <a href="settings.html">
             <i class="bx bx-cog"></i>
-            <span class="links_name">Settings</span>
+            <span class="links_name">സെറ്റിംഗ്സ്</span>
           </a>
         </li>
         <hr>
-        <!-- <li>
-          <a href="settings.html">
-            <i class="bx bx-cog"></i>
-            <span class="links_name">Settings</span>
-          </a>
-        </li>
-        <hr> -->
         <li class="log_out">
           <a href="logout.php">
             <i class="bx bx-log-out"></i>
-            <span class="links_name">Log out</span>
+            <span class="links_name">ലോഗ് ഔട്ട്</span>
           </a>
         </li>
       </ul>
     </div>
     <section class="home-section">
     <nav>
-        <div class="sidebar-button">
+    <div class="sidebar-button">
           <i class="bx bx-menu sidebarBtn"></i>
-          <span class="dashboard">Dashboard</span>
+          <span class="dashboard">ഡാഷ്ബോർഡ്</span>
         </div>
         <!-- <div class="search-box">
-          <input type="text" placeholder="Search Doctors..." />
+          <input type="text" placeholder="Search Patients..." />
           <i class="bx bx-search"></i>
         </div> -->
         <button class="profile-details dropbtn dropdown" onclick="toggleDropdown()">
           <i class="fa-solid fa-user-large"></i>
-          <span class="admin_name">Anuj Kumar</span>
+          <span class="admin_name">അനൂജ് കുമാർ</span>
           <i class="bx bx-chevron-down"></i>
         </button>
         <div id="myDropdown" class="dropdown-content">
           <div class="dropdown-item">
-            <a href="main-update.php"><i class="fa-solid fa-user"></i>Manage Profile</a>
+            <a href="main-update.php"><i class="fa-solid fa-user"></i>പ്രൊഫൈൽ മാനേജ് ചെയ്യുക</a>
             <hr>
           </div>
           <div class="dropdown-item">
-            <a href="settings.html"><i class="fa-solid fa-gear"></i>Settings</a>
+            <a href="settings.html"><i class="fa-solid fa-gear"></i>സെറ്റിംഗ്സ്</a>
             <hr>
           </div>
           <div class="dropdown-item">
-            <a href="doctor_reset.html"><i class="fa-solid fa-key"></i>Change Password</a>
+            <a href="doctor_reset.html"><i class="fa-solid fa-key"></i>പാസ്‌വേഡ് മാറ്റുക</a>
             <hr>
           </div>
         </div>
@@ -155,42 +148,42 @@
         <div class="main">
           <div class="profile-container">
             <div class="update-profile-form">
-              <h2>Update Profile</h2>
+              <h2>പ്രൊഫൈൽ അപ്ഡേറ്റ് ചെയ്യുക</h2>
               <br>
               <hr>
               <br>
               <form id="updateProfileForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
               <div class="form-group">
-                  <label for="fullname">Full Name:</label>
-                  <input type="text" id="fullname" name="fullname" placeholder="Your full name..">
+                  <label for="fullname">പൂർണ്ണനാമം:</label>
+                  <input type="text" id="fullname" name="fullname" placeholder="നിങ്ങളുടെ പൂർണ നാമം...">
                 </div>
                 <br>
                 <div class="form-group">
-                  <label for="address">Address:</label>
-                  <input type="text" id="address" name="address" placeholder="Your address..">
+                  <label for="address">വിലാസം:</label>
+                  <input type="text" id="address" name="address" placeholder="നിങ്ങളുടെ വിലാസം...">
                 </div>
                 <br>
                 <div class="form-group">
-                  <label for="city">City:</label>
-                  <input type="text" id="city" name="city" placeholder="Your City">
+                  <label for="city">നഗരം:</label>
+                  <input type="text" id="city" name="city" placeholder="നിങ്ങളുടെ നഗരം">
                 </div>
                 <br>
                 <div class="form-group">
-                  <label for="email">Email:</label>
-                  <input type="email" id="email" name="email" placeholder="Your email..">
+                  <label for="email">ഇമെയിൽ:</label>
+                  <input type="email" id="email" name="email" placeholder="നിങ്ങളുടെ ഇമെയിൽ..">
                 </div>
                 <br>
                 <div class="form-group">
-                  <label>Gender:</label>
+                  <label>ലിംഗം:</label>
                   <div class="radio-buttons">
-                    <input type="radio" id="female" name="gender" value="female" checked>
-                    <label for="female">Female</label>
-                    <input type="radio" id="male" name="gender" value="male">
-                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="സ്ത്രീ" checked>
+                    <label for="female">സ്ത്രീ</label>
+                    <input type="radio" id="male" name="gender" value="പുരുഷൻ">
+                    <label for="male">പുരുഷൻ</label>
                   </div>
                 </div>
                 <div class="form-group">
-                  <button type="submit" id="saveButton">Save</button>
+                  <button type="submit" id="saveButton">സേവ് ചെയ്യുക</button>
                 </div>
               </form>
             </div>

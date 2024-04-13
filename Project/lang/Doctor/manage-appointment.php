@@ -10,74 +10,74 @@
     <script src="script.js"></script>
   </head>
   <body onload="onload()">
-    <div class="sidebar">
+  <div class="sidebar">
       <div class="logo-details">
         <img src="logo.png" alt="logo">
-        <span class="logo_name">CureConnect</span>
+        <span class="logo_name">ക്യൂർക്കണെക്റ്റ്</span>
       </div>
       <ul class="nav-links">
         <li>
           <a href="index.html" >
             <i class="bx bx-grid-alt"></i>
-            <span class="links_name">Dashboard</span>
+            <span class="links_name">ഡാഷ്ബോർഡ്</span>
           </a>
         </li>
         <hr>
         <li>
           <a href="search_patient.php">
             <i class="fa-solid fa-users"></i>
-            <span class="links_name">Search Patients</span>
+            <span class="links_name">രോഗിയെ തിരയുക</span>
           </a>
           </li>
           <hr>
         <li>
-          <a href="manage-appointment.html">
+          <a href="manage-appointment.php">
             <i class="fa-regular fa-calendar-plus"></i>
-            <span class="links_name">Manage Appointments</span>
+            <span class="links_name">അപ്പോയിൻ്റ്മെൻ്റ്<br>മാനേജ് ചെയ്യുക</span>
           </a>
           </li>
           <hr>
         <li>
           <a href="appointments-history.php">
             <i class="fa-regular fa-calendar-check"></i>
-            <span class="links_name">Appointments History</span>
+            <span class="links_name">അപ്പോയിന്റ്മെന്റ്<br>ഹിസ്റ്ററി</span>
           </a>
         </li>
         <hr>
         <li>
           <a href="contact-us.html">
             <i class="fa-regular fa-circle-question"></i>
-            <span class="links_name">Support</span>
+            <span class="links_name">പിന്തുണ</span>
           </a>
         </li>
         <hr>
         <li>
           <a href="main-update.php">
             <i class="fa-solid fa-circle-user"></i>
-            <span class="links_name">Manage Profile</span>
+            <span class="links_name">പ്രൊഫൈൽ<br>മാനേജ് ചെയ്യുക</span>
           </a>
         </li>
         <hr>
         <li>
           <a href="settings.html">
             <i class="bx bx-cog"></i>
-            <span class="links_name">Settings</span>
+            <span class="links_name">സെറ്റിംഗ്സ്</span>
           </a>
         </li>
         <hr>
         <li class="log_out">
-          <a href="#">
+          <a href="logout.php">
             <i class="bx bx-log-out"></i>
-            <span class="links_name">Log out</span>
+            <span class="links_name">ലോഗ് ഔട്ട്</span>
           </a>
         </li>
       </ul>
     </div>
     <section class="home-section">
       <nav>
-        <div class="sidebar-button">
+      <div class="sidebar-button">
           <i class="bx bx-menu sidebarBtn"></i>
-          <span class="dashboard">Dashboard</span>
+          <span class="dashboard">ഡാഷ്ബോർഡ്</span>
         </div>
         <!-- <div class="search-box">
           <input type="text" placeholder="Search Patients..." />
@@ -85,20 +85,20 @@
         </div> -->
         <button class="profile-details dropbtn dropdown" onclick="toggleDropdown()">
           <i class="fa-solid fa-user-large"></i>
-          <span class="admin_name">Anuj Kumar</span>
+          <span class="admin_name">അനൂജ് കുമാർ</span>
           <i class="bx bx-chevron-down"></i>
         </button>
         <div id="myDropdown" class="dropdown-content">
           <div class="dropdown-item">
-            <a href="main-update.php"><i class="fa-solid fa-user"></i>Manage Profile</a>
+            <a href="main-update.php"><i class="fa-solid fa-user"></i>പ്രൊഫൈൽ മാനേജ് ചെയ്യുക</a>
             <hr>
           </div>
           <div class="dropdown-item">
-            <a href="settings.html"><i class="fa-solid fa-gear"></i>Settings</a>
+            <a href="settings.html"><i class="fa-solid fa-gear"></i>സെറ്റിംഗ്സ്</a>
             <hr>
           </div>
           <div class="dropdown-item">
-            <a href="doctor_reset.html"><i class="fa-solid fa-key"></i>Change Password</a>
+            <a href="doctor_reset.html"><i class="fa-solid fa-key"></i>പാസ്‌വേഡ് മാറ്റുക</a>
             <hr>
           </div>
         </div>
@@ -107,19 +107,19 @@
       <div class="home-content">
         <div class="main">
           <div class="main-head">
-            <h2>Manage Appointments</h2><br><hr><br><br>
+            <h2>അപ്പോയിൻ്റ്മെൻ്റ് മാനേജ് ചെയ്യുക</h2><br><hr><br><br>
           </div>
           <div class="table-container">
 
 <table>
 <tr>
-    <th>Appointment ID</th>
-    <th>Doctor Name</th>
-    <th>Specialization</th>
-    <th>Appointment Date</th>
-    <th>Appointment Time</th>
-    <th>Creation DateTime</th>
-    <th>Action</th>
+    <th>അപ്പോയിൻ്റ്മെൻ്റ്<br>ഐഡി</th>
+    <th>ഡോക്ടറുടെ <br>പേര്</th>
+    <th>സ്പെഷ്യലൈസേഷന്‍</th>
+    <th>അപ്പോയിൻ്റ്മെൻ്റ്<br>തീയതി</th>
+    <th>അപ്പോയിൻ്റ്മെൻ്റ് <br>സമയം</th>
+    <th>സൃഷ്ടിച്ച <br>ദിനം/സമയം</th>
+    <th>നടപടി</th>
   </tr>
   <!-- <tr>
     <td>1</td>
@@ -200,7 +200,7 @@ if ($result->num_rows > 0) {
         echo "</tr>";
     }
 } else {
-    echo "<tr><td colspan='7'>No appointments found</td></tr>";
+    echo "<tr><td colspan='7'>അപ്പോയിന്റ്മെന്റുകൾ ഒന്നും കണ്ടെത്തിയില്ല</td></tr>";
 }
 $conn->close();
 ?>

@@ -169,17 +169,20 @@
       if ($result->num_rows > 0) {
           // Output data of each row
           while ($row = $result->fetch_assoc()) {
-              echo '<tr>
-                      <td>' . $row["PatientName"] . '</td>
-                      <td>' . $row["PatientContno"] . '</td>
-                      <td>' . $row["PatientGender"] . '</td>
-                      <td>' . $row["CreationDate"] . '</td>
-                      <td>' . $row["UpdationDate"] . '</td>
-                      <td>
-                          <button class="edit"><i class="fas fa-pen"></i></button>
-                          <button class="delete"><i class="fas fa-trash-alt"></i></button>
-                      </td>
-                    </tr>';
+              echo "<tr>";
+              echo "<td>" . $row['PatientName'] . "</td>";
+              echo "<td>" . $row['PatientContno'] . "</td>";
+              echo "<td>" . $row['PatientGender'] . "</td>";
+              echo "<td>" . $row['CreationDate'] . "</td>";
+              echo "<td>" . $row['UpdationDate'] . "</td>";
+              echo "<td>
+                        <button class='edit'><i class='fas fa-pen'></i></button>
+
+                        <a href='delete_patient.php? deleteid=".$row['ID']."'> 
+                        <button class='delete'><i class='fas fa-trash-alt'></i></button>
+                        </a>
+                      </td>";
+              echo "</tr>";
           }
       } else {
           echo "<tr><td colspan='6'>No results found</td></tr>";
