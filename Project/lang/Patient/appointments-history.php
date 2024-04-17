@@ -126,6 +126,7 @@
   <tr>
     <th>അപ്പോയിൻ്റ്മെൻ്റ്<br>ഐഡി</th>
     <th>ഡോക്ടറുടെ പേര്</th>
+    <th>രോഗിയുടെ പേര്</th>
     <th>സ്പെഷ്യലൈസേഷൻ	</th>
     <th>അപ്പോയിൻ്റ്മെൻ്റ് തീയതി</th>
     <th>അപ്പോയിൻ്റ്മെൻ്റ് സമയം</th>
@@ -196,17 +197,21 @@ if ($result === false) {
 if ($result->num_rows > 0) {
     // Output data of each row
     while ($row = $result->fetch_assoc()) {
-        echo "<tr>";
-        echo "<td>" . $row['id'] . "</td>";;
-        echo "<td>" . $row['doctor'] . "</td>";
-        echo "<td>" . $row['doctorSpecialization'] . "</td>";
-        echo "<td>" . $row['appointmentDate'] . "</td>";
-        echo "<td>" . $row['appointmentTime'] . "</td>";
-        echo "<td>" . $row['postingDate'] . "</td>";
+      echo "<tr>";
+      echo "<td>" . $row['id'] . "</td>";;
+      echo "<td>" . $row['doctor'] . "</td>";
+      echo "<td>" . $row['P_name'] . "</td>";
+      echo "<td>" . $row['doctorSpecialization'] . "</td>";
+      echo "<td>" . $row['appointmentDate'] . "</td>";
+      echo "<td>" . $row['appointmentTime'] . "</td>";
+      echo "<td>" . $row['postingDate'] . "</td>";
         // echo "<td class='status " . ($row['status'] == 'Confirmed' ? 'completed' : 'pending') . "'>" . $row['status'] . "</td>";
         echo "<td>
                 <button class='edit'><i class='fas fa-pen'></i></button>
-                <button class='delete'><i class='fas fa-trash-can'></i></button>
+
+                <a href='delete_appoin.php? deleteid=".$row['id']."'>
+                <button class='delete'><i class='fas fa-trash-alt'></i></button>   
+                </a>
               </td>";
         echo "</tr>";
     }

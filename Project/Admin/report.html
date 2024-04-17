@@ -122,40 +122,36 @@
       </nav>
 
       <div class="home-content">
-        
-        
-              <div class="main ">
-                <div class="profile-container">
-                  
-                
-                <div class="update-profile-form">
-                  <h2>Generate Report</h2><br><hr><br><br>
-                  <form id="updateProfileForm">
-              <div class="form-group">
-                <label for="start_date">Start Date:</label>
-                <input type="date" id="start_date" name="start_date" required>
-              </div><br>
-              <div class="form-group">
-                <label for="end_date">End Date:</label>
-                <input type="date" id="end_date" name="end_date" required>
-              </div><br>
-              <div class="form-group">
-                <label for="report_type">Report Type:</label>
-                <select id="report_type" name="report_type" required>
+        <div class="main">
+          <div class="profile-container">
+            <div class="update-profile-form">
+              <h2>Generate Report</h2><br><hr><br><br>
+              <form id="updateProfileForm" action="generate_report.php" method="post">
+                <div class="form-group">
+                  <label for="start_date">Start Date:</label>
+                  <input type="date" id="start_date" name="start_date" required>
+                </div><br>
+                <div class="form-group">
+                  <label for="end_date">End Date:</label>
+                  <input type="date" id="end_date" name="end_date" required>
+                </div><br>
+                <div class="form-group">
+                  <label for="report_type">Report Type:</label>
+                  <select id="report_type" name="report_type" required>
                     <option value="patient">Patients Report</option>
                     <option value="appointment">Appointments Report</option>
                     <option value="doctor">Doctors Report</option>
-                </select>
-              </div><br>
-              
-              <div class="form-group">
-                <a href="update-profile.html"><button type="button" id="updateButton" >Generate</button></a>
-              </div>
-            </form>
-                  </div>
+                  </select>
+                </div><br>
+                <div class="form-group">
+                  <button type="submit" id="updateButton">Generate</button>
                 </div>
-              </div>
-              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      
     <script>
       let sidebar = document.querySelector(".sidebar");
       let sidebarBtn = document.querySelector(".sidebarBtn");

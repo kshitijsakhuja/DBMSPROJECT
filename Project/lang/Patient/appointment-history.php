@@ -33,15 +33,15 @@ if ($result->num_rows > 0) {
             </tr>';
     // Output data of each row
     while ($row = $result->fetch_assoc()) {
-        echo '<tr>
-                <td>' . $row["appointment_id"] . '</td>
-                <td>' . $row["patient_name"] . '</td>
-                <td>' . $row["doctor_name"] . '</td>
-                <td>' . $row["appointment_datetime"] . '</td>
-                <td>' . $row["creation_datetime"] . '</td>
-                <td>' . $row["status"] . '</td>
-                <td><button>View</button></td>
-              </tr>';
+        echo "<tr>";
+        echo"<td>" . $row['appointment_id'] . "</td>";
+        echo "<td>" . $row['patient_name'] . "</td>";
+        echo "<td>" . $row['doctor_name'] . "</td>";
+        echo "<td>" . $row['appointment_datetime'] . "</td>";
+        echo "<td>" . $row['creation_datetime'] . "</td>";
+        echo "<td>" . $row['status'] . "</td>";
+        echo "<td><button>View</button></td>";
+         echo "</tr>";
     }
     echo '</table>';
 } else {

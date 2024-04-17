@@ -132,6 +132,7 @@
   <tr>
     <th>Appointment ID</th>
     <th>Doctor Name</th>
+    <th>Patients Name</th>
     <th>Specialization</th>
     <th>Appointment Date</th>
     <th>Appointment Time</th>
@@ -206,6 +207,7 @@ if ($result->num_rows > 0) {
         echo "<tr>";
         echo "<td>" . $row['id'] . "</td>";
         echo "<td>" . $row['doctor'] . "</td>";
+        echo "<td>" . $row['P_name'] . "</td>";
         echo "<td>" . $row['doctorSpecialization'] . "</td>";
         echo "<td>" . $row['appointmentDate'] . "</td>";
         echo "<td>" . $row['appointmentTime'] . "</td>";

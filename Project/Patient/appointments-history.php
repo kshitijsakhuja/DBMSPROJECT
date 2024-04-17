@@ -126,6 +126,7 @@
   <tr>
     <th>Appointment ID</th>
     <th>Doctor Name</th>
+    <th>Patient Name</th>
     <th>Specialization</th>
     <th>Appointment Date</th>
     <th>Appointment Time</th>
@@ -199,6 +200,7 @@ if ($result->num_rows > 0) {
         echo "<tr>";
         echo "<td>" . $row['id'] . "</td>";;
         echo "<td>" . $row['doctor'] . "</td>";
+        echo "<td>" . $row['P_name'] . "</td>";
         echo "<td>" . $row['doctorSpecialization'] . "</td>";
         echo "<td>" . $row['appointmentDate'] . "</td>";
         echo "<td>" . $row['appointmentTime'] . "</td>";
@@ -206,7 +208,10 @@ if ($result->num_rows > 0) {
         // echo "<td class='status " . ($row['status'] == 'Confirmed' ? 'completed' : 'pending') . "'>" . $row['status'] . "</td>";
         echo "<td>
                 <button class='edit'><i class='fas fa-pen'></i></button>
-                <button class='delete'><i class='fas fa-trash-can'></i></button>
+
+                <a href='delete_appoin.php? deleteid=".$row['id']."'>
+                <button class='delete'><i class='fas fa-trash-alt'></i></button>   
+                </a>
               </td>";
         echo "</tr>";
     }

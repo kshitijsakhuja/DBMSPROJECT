@@ -209,7 +209,10 @@ if ($result->num_rows > 0) {
         // echo "<td class='status " . ($row['status'] == 'Confirmed' ? 'completed' : 'pending') . "'>" . $row['status'] . "</td>";
         echo "<td>
                 <button class='edit'><i class='fas fa-pen'></i></button>
+
+                <a href='delete_medhis.php? deleteid=" .$row['ID']."'>
                 <button class='delete'><i class='fas fa-trash-can'></i></button>
+                </a>
               </td>";
         echo "</tr>";
     }

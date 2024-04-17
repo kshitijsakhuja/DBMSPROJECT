@@ -18,13 +18,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
     $specialization = !empty($_POST['doctorSpecialization']) ? $_POST['doctorSpecialization'] : '';
     $doctorName = !empty($_POST['doctor']) ? $_POST['doctor'] : '';
+    $patientName = !empty($_POST['patientname']) ? $_POST['patientname'] : '';
     $date = !empty($_POST['appointmentDate']) ? $_POST['appointmentDate'] : '';
     $time = !empty($_POST['appointmentTime']) ? $_POST['appointmentTime'] : '';
     $consultancy_fees = !empty($_POST['consultancyfees']) ? $_POST['consultancyfees'] : '';
 
     // Prepare SQL statement to insert data into the database
-    $sql = "INSERT INTO appointment (doctorspecialization, doctor, appointmentDate, appointmentTime, consultancyfees) 
-    VALUES ('$specialization', '$doctorName', '$date', '$time', '$consultancy_fees')";
+    $sql = "INSERT INTO appointment (doctorspecialization, doctor, P_name,appointmentDate, appointmentTime, consultancyfees) 
+    VALUES ('$specialization', '$doctorName','$patientName', '$date', '$time', '$consultancy_fees')";
     
     // Execute the statement
     if ($conn->query($sql) === TRUE) {

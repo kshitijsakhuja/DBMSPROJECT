@@ -115,6 +115,7 @@
 <tr>
     <th>അപ്പോയിൻ്റ്മെൻ്റ്<br>ഐഡി</th>
     <th>ഡോക്ടറുടെ <br>പേര്</th>
+    <th>രോഗികളുടെ പേര്</th>
     <th>സ്പെഷ്യലൈസേഷന്‍</th>
     <th>അപ്പോയിൻ്റ്മെൻ്റ്<br>തീയതി</th>
     <th>അപ്പോയിൻ്റ്മെൻ്റ് <br>സമയം</th>
@@ -175,6 +176,7 @@ if ($result->num_rows > 0) {
         echo "<tr>";
         echo "<td>" . $row['id'] . "</td>";;
         echo "<td>" . $row['doctor'] . "</td>";
+        echo "<td>" . $row['P_name'] . "</td>";
         echo "<td>" . $row['doctorSpecialization'] . "</td>";
         echo "<td>" . $row['appointmentDate'] . "</td>";
         echo "<td>" . $row['appointmentTime'] . "</td>";
