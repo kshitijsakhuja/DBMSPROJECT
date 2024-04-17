@@ -107,7 +107,7 @@
           <div class="column">
             <div class="card">
                 <div><img class="card-img" src="patient.jpg" alt="Card image"></div>
-                <div><a href="/project/Patient/Patient_login.html"><button class="login-btn">രോഗി ലോഗിൻ</button></a></div>
+                <div><a href="Patient/Patient_login.html"><button class="login-btn">രോഗി ലോഗിൻ</button></a></div>
                 </div>
             </div>
           <div class="column">
