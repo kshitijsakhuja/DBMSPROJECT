@@ -176,8 +176,6 @@
               echo "<td>" . $row['CreationDate'] . "</td>";
               echo "<td>" . $row['UpdationDate'] . "</td>";
               echo "<td>
-                        <button class='edit'><i class='fas fa-pen'></i></button>
-
                         <a href='delete_patient.php? deleteid=".$row['ID']."'> 
                         <button class='delete'><i class='fas fa-trash-alt'></i></button>
                         </a>

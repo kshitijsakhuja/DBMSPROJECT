@@ -120,6 +120,7 @@
     <th>അപ്പോയിൻ്റ്മെൻ്റ്<br>തീയതി</th>
     <th>അപ്പോയിൻ്റ്മെൻ്റ് <br>സമയം</th>
     <th>സൃഷ്ടിച്ച <br>ദിനം/സമയം</th>
+    <th>ആക്ഷൻ</th>
   </tr>
   <!-- <tr>
     <td>1</td>
@@ -182,10 +183,11 @@ if ($result->num_rows > 0) {
         echo "<td>" . $row['appointmentTime'] . "</td>";
         echo "<td>" . $row['postingDate'] . "</td>";
         // echo "<td class='status " . ($row['status'] == 'Confirmed' ? 'completed' : 'pending') . "'>" . $row['status'] . "</td>";
-        // echo "<td>
-        //         <button class='edit'><i class='fas fa-pen'></i></button>
-        //         <button class='delete'><i class='fas fa-trash-can'></i></button>
-        //       </td>";
+        echo "<td>
+        <a href='delete_appoin.php? deleteid=".$row['id']."'>
+        <button class='delete'><i class='fas fa-trash-alt'></i></button>   
+        </a>
+              </td>";
         echo "</tr>";
     }
 } else {

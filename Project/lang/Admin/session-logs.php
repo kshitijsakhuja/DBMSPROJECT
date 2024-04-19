@@ -93,12 +93,10 @@
           <i class="bx bx-menu sidebarBtn"></i>
           <span class="dashboard">ഡാഷ്ബോർഡ്</span>
         </div>
-        <div class="search-box">
-          <form action="#" method="post">
-            <input type="text" id="doct_search" name="doct_search" placeholder="ഡോക്ടർമാരെ തിരയൂ..." />
-            <button type="submit" name="submit_search"><i class="bx bx-search"></i></button>
-          </form>
-        </div>
+        <!-- <div class="search-box">
+          <input type="text" placeholder="Search Users..." />
+          <i class="bx bx-search"></i>
+        </div> -->
         <button class="profile-details dropbtn dropdown" onclick="toggleDropdown()">
           <i class="fa-solid fa-user-large"></i>
           <span class="admin_name">അഡ്മിൻ</span>
@@ -124,135 +122,125 @@
       </nav>
 
       <div class="home-content">
-        
-        
-              <div class="main ">
-                <div class="main-head">
-            <!-- <h2>Manage Doctors</h2><br><hr><br><br>
-            <a href="add-doctor.html"><button><i class="fa-solid fa-plus"></i>Add Doctor</button></a>
-            <a href="specializations.html"><button><i class="fa-solid fa-circle-info"></i>Specializations</button></a>
-            </div> -->
+        <div class="main">
+          <div class="main-head">
+            <h2>സെഷൻ ലോഗുകൾ</h2><br><hr><br><br>
+          </div>
           <div class="table-container">
 
-<!-- <table>
+<table>
   <tr>
-    <th>ID</th>
-    <th>Specialization</th>
-    <th>Doctor Name</th>
-    <th>Creation DateTime</th>
-    <th>Action</th>
+  <th>ഉപയോക്തൃ ഐഡി</th>
+    <th>ഉപയോക്തൃനാമം</th>
+    <th>ലോഗിൻ സമയം</th>
+    <th>ലോഗ്ഔട്ട് സമയം</th>
+    <!-- <th>പദവി</th> -->
+  </tr>
+  <!-- <tr>
+    <td>3</td>
+    <td>charudua12@test.com</td>
+    <td>2022-11-06 17:36:37</td>
+    <td>06-11-2022 05:36:40 PM</td>
+    <td class="success">Success</td>
   </tr>
   <tr>
-  <td>1</td>
-  <td>Cardiology</td>
-  <td>Dr. John Smith</td>
-  <td>2024-03-20 10:00 AM</td>
-  <td>
-    <button class="edit"><i class="fas fa-pen"></i></button>
-    <button class="delete"><i class="fas fa-trash-can"></i></button>
-  </td>
+    <td>4</td>
+    <td>charudua12@test.com</td>
+    <td>2022-11-06 17:38:56</td>
+    <td>06-11-2022 05:42:53 PM</td>
+    <td class="success">Success</td>
   </tr>
   <tr>
-  <td>2</td>
-  <td>Dermatology</td>
-  <td>Dr. Emily Johnson</td>
-  <td>2024-03-21 09:30 AM</td>
-  <td>
-    <button class="edit"><i class="fas fa-pen"></i></button>
-    <button class="delete"><i class="fas fa-trash-can"></i></button>
-  </td>
-</tr>
+    <td>5</td>
+    <td>anujk123@test.com</td>
+    <td>2022-11-06 17:53:18</td>
+    <td>06-11-2022 05:53:40 PM</td>
+    <td class="success">Success</td>
+  </tr>
+   <tr>
+    <td>7</td>
+    <td>anujk123@test.com</td>
+    <td>2022-11-06 18:47:33</td>
+    <td>06-11-2022 06:50:28 PM</td>
+    <td class="success">Success</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>anujk123@test.com</td>
+    <td>2024-02-17 09:23:08</td>
+    <td>17-02-2024 09:23:50 AM</td>
+    <td class="success">Success</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>anujk123@test.com</td>
+    <td>2024-02-17 09:43:50</td>
+    <td></td>
+    <td class="success">Success</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>Anuj Kumar</td>
+    <td>2024-02-23 14:21:05</td>
+    <td></td>
+    <td class="failed">Failed</td>
+  </tr> -->
+  <!-- Add more rows based on the provided data -->
 
-<tr>
-  <td>3</td>
-  <td>Orthopedics</td>
-  <td>Dr. Michael Brown</td>
-  <td>2024-03-22 11:15 AM</td>
-  <td>
-    <button class="edit"><i class="fas fa-pen"></i></button>
-    <button class="delete"><i class="fas fa-trash-can"></i></button>
-  </td>
-</tr>
+  <?php
+// Database connection details
+$servername = "localhost";
+$username = "root";
+$password = ''; // If your password is empty, leave it as an empty string
+$dbname = "hms";
 
-<tr>
-  <td>4</td>
-  <td>Neurology</td>
-  <td>Dr. Sarah Lee</td>
-  <td>2024-03-23 02:00 PM</td>
-  <td>
-    <button class="edit"><i class="fas fa-pen"></i></button>
-    <button class="delete"><i class="fas fa-trash-can"></i></button>
-  </td>
-</tr>
- Include more rows as needed
-</table> -->
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Fetch data from the database
+$sql = "SELECT * FROM userlog";
+$result = $conn->query($sql);
+
+if ($result === false) {
+    die("Error executing query: " . $conn->error);
+}
+
+if ($result->num_rows > 0) {
+    // Output data of each row
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr>";
+        echo "<td>" . $row['id'] . "</td>";;
+        echo "<td>" . $row['username'] . "</td>";
+        echo "<td>" . $row['loginTime'] . "</td>";
+        echo "<td>" . $row['logout'] . "</td>";
+        // echo "<td>" . $row['appointmentTime'] . "</td>";
+        // echo "<td>" . $row['postingDate'] . "</td>";
+        // echo "<td class='status " . ($row['status'] == 'Confirmed' ? 'completed' : 'pending') . "'>" . $row['status'] . "</td>";
+        // echo "<td>
+        //         <button class='edit'><i class='fas fa-pen'></i></button>
+        //         <button class='delete'><i class='fas fa-trash-can'></i></button>
+        //       </td>";
+        echo "</tr>";
+    }
+} else {
+    echo "<tr><td colspan='7'>No appointments found</td></tr>";
+}
+$conn->close();
+?>
+</table>
+
+
+
+
 
 </div>
-
-<div id="results">
-  <div class = 'searchresults'>
-    <h1><center>ഡോക്ടർമാരെ നിയന്ത്രിക്കുക:</center><br><hr></h1><br>
-    <a href="add-doctor.html"><button><i class="fa-solid fa-plus"></i>ഡോക്ടറെ ചേർക്കുക</button></a>
-            <a href="specializations.php"><button><i class="fa-solid fa-circle-info"></i>സ്പെഷ്യലൈസേഷനുകൾ </button></a>
-    
-            <?php
-      $servername = "localhost";
-      $username = "root"; // Replace with your MySQL username
-      $password = ""; // Replace with your MySQL password
-      $dbname = "hms"; // Replace with your database name
-
-      $conn = new mysqli($servername, $username, $password, $dbname);
-
-      if ($conn->connect_error) {
-          die("Connection failed: " . $conn->connect_error);
-      }
-
-      // Check if a search has been performed
-      if (isset($_POST['doct_search'])) {
-          $doctor = $_POST['doct_search'];
-          $sql = "SELECT * FROM doctors WHERE doctorName LIKE '%$doctor%'";
-      } else {
-          // If no search has been performed, fetch all data
-          $sql = "SELECT * FROM doctors";
-      }
-
-      $result = $conn->query($sql);
-
-      echo '<table>
-              <tr>
-                <th>ഐഡി</th>
-                <th>സ്പെഷ്യലൈസേഷൻ</th>
-                <th>ഡോക്ടറുടെ പേര്</th>
-                <th>സൃഷ്ടിയുടെ <br>തീയതിയും സമയവും</th>
-                <th>നടപടി</th>
-              </tr>';
-        if ($result->num_rows > 0) {
-          // Output data of each row
-          while ($row = $result->fetch_assoc()) {
-            echo "<tr>";
-echo "<td>" . $row['id'] . "</td>";
-echo "<td>" . $row["specialization"] . "</td>";
-echo "<td>" . $row["doctorName"] . "</td>";
-echo "<td>" . $row["creationDate"] . "</td>";
-echo "<td>
-        <a href='delete_doctor.php? deleteid=".$row['id']."'> 
-        <button class='delete'><i class='fas fa-trash-alt'></i></button>
-        </a>
-      </td>";
-echo "</tr>";
-          }
-        } else {
-          echo "<tr><td colspan='4'>No results found</td></tr>";
-        }
-        echo '</table>';
-        $conn->close();
-      ?>
-
-  </div>
-
-  
-              </div>
-              </div>
+        </div>
+      </div>
     <script>
       let sidebar = document.querySelector(".sidebar");
       let sidebarBtn = document.querySelector(".sidebarBtn");

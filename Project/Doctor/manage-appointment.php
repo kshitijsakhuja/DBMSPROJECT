@@ -31,7 +31,7 @@
           </li>
           <hr>
         <li>
-          <a href="manage-appointment.html">
+          <a href="manage-appointment.php">
             <i class="fa-regular fa-calendar-plus"></i>
             <span class="links_name">Manage Appointments</span>
           </a>
@@ -194,8 +194,10 @@ if ($result->num_rows > 0) {
         echo "<td>" . $row['postingDate'] . "</td>";
         // echo "<td class='status " . ($row['status'] == 'Confirmed' ? 'completed' : 'pending') . "'>" . $row['status'] . "</td>";
         echo "<td>
-                <button class='edit'><i class='fas fa-pen'></i></button>
-                <button class='delete'><i class='fas fa-trash-can'></i></button>
+                
+                <a href='delete_medhis.php? deleteid=".$row['id']."'>
+                <button class='delete'><i class='fas fa-trash-alt'></i></button>   
+                </a>
               </td>";
         echo "</tr>";
     }

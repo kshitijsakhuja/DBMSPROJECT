@@ -235,8 +235,6 @@ echo "<td>" . $row["specialization"] . "</td>";
 echo "<td>" . $row["doctorName"] . "</td>";
 echo "<td>" . $row["creationDate"] . "</td>";
 echo "<td>
-        <button class='edit'><i class='fas fa-pen'></i></button>
-
         <a href='delete_doctor.php? deleteid=".$row['id']."'> 
         <button class='delete'><i class='fas fa-trash-alt'></i></button>
         </a>

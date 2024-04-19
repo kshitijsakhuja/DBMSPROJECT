@@ -207,8 +207,6 @@ if ($result->num_rows > 0) {
       echo "<td>" . $row['postingDate'] . "</td>";
         // echo "<td class='status " . ($row['status'] == 'Confirmed' ? 'completed' : 'pending') . "'>" . $row['status'] . "</td>";
         echo "<td>
-                <button class='edit'><i class='fas fa-pen'></i></button>
-
                 <a href='delete_appoin.php? deleteid=".$row['id']."'>
                 <button class='delete'><i class='fas fa-trash-alt'></i></button>   
                 </a>

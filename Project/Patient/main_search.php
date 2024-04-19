@@ -115,30 +115,58 @@
         
       </nav>
 
-      <div class="home-content">
+      <?php
+// Set database connection parameters
+// Establishing connection to the database
+$servername = "localhost";
+$username = "root"; // Replace with your MySQL username
+$password = ""; // Replace with your MySQL password
+$dbname = "hms"; // Replace with your database name
 
-        <div class="main ">
-          <div class="search-container">
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// SQL query to fetch specializations from the database
+$sql = "SELECT specialization FROM doctorspecilization";
+$result = $conn->query($sql);
+
+// HTML and PHP mixed code to display the form and populate the dropdown
+?>
+
+      <<div class="home-content">
+    <div class="main ">
+        <div class="search-container">
             <h1>Doctor Search</h1><br><br>
             <form action="main_search.php" method="post">
-            <label for="department">Select Department:</label>
-            <select name="department" id="department">
-              <option value="All">All Departments</option>
-              <option value="Dentistry">Dentistry</option>
-              <option value="Cardiology">Cardiology</option>
-              <option value="Pediatrics">Pediatrics</option>
-              <option value="Neurology">Neurology</option>
-              <option value="Gastroenterology">Gastroenterology</option>
-              <option value="Pulmonology">Pulmonology</option>
-              <option value="Dermatology">Dermatology</option>
-              <option value="Hematology">Hematology</option>
-              <option value="General Surgery">General Surgery</option>
-            </select><br><br>   
-            <input type="submit" value="Search">
+                <label for="department">Select Department:</label>
+                <select name="department" id="department">
+                    <option value="All">All Departments</option>
+                    <?php
+                        if ($result->num_rows > 0) {
+                            // output data of each row
+                            while($row = $result->fetch_assoc()) {
+                                echo '<option value="' . htmlspecialchars($row['specialization']) . '">' . htmlspecialchars($row['specialization']) . '</option>';
+                            }
+                        } else {
+                            echo '<option value="no-option">No Specializations Available</option>';
+                        }
+                    ?>
+                </select><br><br>   
+                <input type="submit" value="Search">
             </form>
-    <div id="results">
-      <div class = 'searchresults'>
-        <h1>Search Results:</h1><br>
+        </div>
+        <div id="results">
+            <div class='searchresults'>
+                <h1>Search Results:</h1><br>
+
+
+                
+        <!--PHP code to search Doctor -->
         <?php
 // Establishing connection to the database
 $servername = "localhost";

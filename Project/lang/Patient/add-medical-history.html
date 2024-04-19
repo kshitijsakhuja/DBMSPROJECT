@@ -13,69 +13,69 @@
     <div class="sidebar">
       <div class="logo-details">
         <img src="logo.png" alt="logo">
-        <span class="logo_name">CureConnect</span>
+        <span class="logo_name">ക്യൂർക്കണെക്റ്റ്</span>
       </div>
       <ul class="nav-links">
         <li>
-          <a href="index.html" class="active" >
+          <a href="index.html" >
             <i class="bx bx-grid-alt"></i>
-            <span class="links_name">Dashboard</span>
+            <span class="links_name">ഡാഷ്ബോർഡ്</span>
           </a>
         </li>
         <hr>
         <li>
           <a href="main_search.php">
             <i class="fa-solid fa-user-doctor"></i>
-            <span class="links_name">Search Doctors</span>
+            <span class="links_name">ഡോക്ടർ തിരയുക</span>
           </a>
           </li>
           <hr>
         <li>
-          <a href="book-appointment.html" class="something">
+          <a href="book-appointment.html">
             <i class="fa-solid fa-calendar-plus"></i>
-            <span class="links_name">Book Appointment</span>
+            <span class="links_name" style="font-size: 14px;">അപ്പോയിന്റ്മെന്റ് <br> ബുക്ക് ചെയ്യുക</span>
           </a>
           </li>
           <hr>
         <li>
           <a href="appointments-history.php">
             <i class="fa-solid fa-calendar-check"></i>
-            <span class="links_name">Appointments History</span>
+            <span class="links_name" style="font-size: 14px;">അപ്പോയിന്റ്മെന്റ്<br>ഹിസ്റ്ററി</span>
           </a>
         </li>
         <hr>
         <li>
           <a href="medical-history.php">
             <i class="fa-solid fa-file-medical"></i>
-            <span class="links_name">Medical History</span>
+            <span class="links_name">മെഡിക്കൽ <br>ഹിസ്റ്ററി</span>
           </a>
         </li>
         <hr>
         <li>
-          <a href="contact-us.html" class="">
+          <a href="contact-us.html">
             <i class="fa-regular fa-circle-question"></i>
-            <span class="links_name">Raise Queries</span>
+            <span class="links_name" style="font-size: 14px;">ചോദ്യങ്ങൾ <br>ഉന്നയിക്കുക</span>
           </a>
         </li>
         <hr>
         <li>
           <a href="main-update.php">
             <i class="fa-solid fa-circle-user"></i>
-            <span class="links_name">Manage Profile</span>
+            <span class="links_name">പ്രൊഫൈൽ <br>മാനേജ് ചെയ്യുക</span>
           </a>
         </li>
         <hr>
         <li>
           <a href="settings.html">
             <i class="bx bx-cog"></i>
-            <span class="links_name">Settings</span>
+            <span class="links_name">സെറ്റിംഗ്സ്</span>
           </a>
         </li>
         <hr>
         <li class="log_out">
-          <a href="#">
+          <a href="logout.php">
             <i class="bx bx-log-out"></i>
-            <span class="links_name">Log out</span>
+            <span class="links_name">ലോഗ് ഔട്ട്</span>
           </a>
         </li>
       </ul>
@@ -84,28 +84,28 @@
       <nav>
         <div class="sidebar-button">
           <i class="bx bx-menu sidebarBtn"></i>
-          <span class="dashboard">Dashboard</span>
+          <span class="dashboard">ഡാഷ്ബോർഡ്</span>
         </div>
-        <!--<div class="search-box">
+        <!-- <div class="search-box">
           <input type="text" placeholder="Search Doctors..." />
           <i class="bx bx-search"></i>
-        </div>-->
+        </div> -->
         <button class="profile-details dropbtn dropdown" onclick="toggleDropdown()">
           <i class="fa-solid fa-user-large"></i>
-          <span class="admin_name">John Doe</span>
+          <span class="admin_name">ജോൺ ഡോ</span>
           <i class="bx bx-chevron-down"></i>
         </button>
         <div id="myDropdown" class="dropdown-content">
           <div class="dropdown-item">
-            <a href="main-update.php"><i class="fa-solid fa-user"></i>Manage Profile</a>
+            <a href="main-update.php"><i class="fa-solid fa-user"></i>പ്രൊഫൈൽ മാനേജ് ചെയ്യുക</a>
             <hr>
           </div>
           <div class="dropdown-item">
-            <a href="settings.html"><i class="fa-solid fa-gear"></i>Settings</a>
+            <a href="settings.html"><i class="fa-solid fa-gear"></i>സെറ്റിംഗ്സ്</a>
             <hr>
           </div>
           <div class="dropdown-item">
-            <a href="patient_reset.html"><i class="fa-solid fa-key"></i>Change Password</a>
+            <a href="patient_reset.html"><i class="fa-solid fa-key"></i>പാസ്‌വേഡ് മാറ്റുക</a>
             <hr>
           </div>
         </div>
@@ -119,41 +119,41 @@
         
               <div class="main ">
                 <div class="add-record-form">
-                  <h2>Add Medical Record</h2><br><hr><br><br>
+                  <h2>മെഡിക്കൽ റെക്കോർഡ് ചേർക്കുക</h2><br><hr><br><br>
                   <form action="add-medicalhistory.php" method="POSt">
                     <div class="form-group">
-                      <label for="visit-date">Record Date</label>
+                      <label for="visit-date">റെക്കോർഡിലെ തിയതി</label>
                       <input type="datetime-local" id="CretionDate" name="CreationDate">
                     </div><br>
 
                     <div class="form-group">
-                      <label for="blood-pressure">Blood Pressure</label>
-                      <input type="text" id="BloodPressure" name="BloodPressure" placeholder="Enter Blood Pressure">
+                      <label for="blood-pressure">രക്തസമ്മര്ദ്ദം</label>
+                      <input type="text" id="BloodPressure" name="BloodPressure" placeholder="രക്തസമ്മർദ്ദം നൽകുക">
                     </div><br>
 
                     <div class="form-group">
-                      <label for="weight">Weight</label>
-                      <input type="text" id="Weight" name="Weight" placeholder="Enter Weight">
+                      <label for="weight">ഭാരം</label>
+                      <input type="text" id="Weight" name="Weight" placeholder="ഭാരം നൽകുക">
                     </div><br>
 
                     <div class="form-group">
-                      <label for="blood-sugar">Blood Sugar</label>
-                      <input type="text" id="BloodSugar" name="BloodSugar" placeholder="Enter Blood Sugar">
+                      <label for="blood-sugar">ഗ്ലൂക്കോസ് നില</label>
+                      <input type="text" id="BloodSugar" name="BloodSugar" placeholder="ഗ്ലൂക്കോസ് നില നൽകുക">
                     </div><br>
 
                       <div class="form-group">
-                        <label for="body-temperature">Body Temperature</label>
-                        <input type="text" id="Temperature" name="Temperature" placeholder="Enter Body Temperature">
+                        <label for="body-temperature">ശരീര താപനില</label>
+                        <input type="text" id="Temperature" name="Temperature" placeholder="ശരീര താപനില നൽകുക">
                       </div><br>
 
                       <div class="form-group textarea">
-                        <label id="medical-prescription-label" for="medical-prescription">Medical Prescription</label>
-                         <textarea  id="MedicalPres" name="MedicalPres" placeholder="Enter Medical Prescription"></textarea>
+                        <label id="medical-prescription-label" for="medical-prescription">മെഡിക്കൽ കുറിപ്പടി</label>
+                         <textarea  id="MedicalPres" name="MedicalPres" placeholder="മെഡിക്കൽ കുറിപ്പടി നൽകുക...."></textarea>
                       </div>
                       <br>
                       <div class="form-group">
                         <a href="medical-history.html">
-                          <button type="submit">Add Medical Record</button>
+                          <button type="submit">മെഡിക്കൽ റെക്കോർഡ് ചേർക്കുക</button>
                         </a>
                       </div>
 </form>
