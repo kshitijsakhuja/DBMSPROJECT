@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-   <script src="https://kit.fontawesome.com/5479b044dc.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5479b044dc.js" crossorigin="anonymous"></script>
+    <!-- <link rel="icon" type="image/x-icon" href="/Patient/logo.png"> -->
     <title>CureConnect</title>
 
 

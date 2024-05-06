@@ -74,7 +74,7 @@
         </li>
         <hr>
         <li class="log_out">
-          <a href="#">
+          <a href="logout.php">
             <i class="bx bx-log-out"></i>
             <span class="links_name">Log out</span>
           </a>
@@ -157,7 +157,8 @@ $result = $conn->query($sql);
                         }
                     ?>
                 </select><br><br>   
-                <input type="submit" value="Search">
+                <input type="submit" value="Search" style="background: #00ab9f;
+    border-color: #EFEEF1; color:white;">
             </form>
         </div>
         <div id="results">

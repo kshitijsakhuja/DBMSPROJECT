@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
    <script src="https://kit.fontawesome.com/5479b044dc.js" crossorigin="anonymous"></script>
-    <title>ക്യൂർക്കണെക്റ്റ്</title>
+    <title >ക്യൂർക്കണെക്റ്റ്</title>
 
 
 <script type="text/javascript">
@@ -55,9 +55,9 @@
             <li class="dropdown" >
             <a class="dropbtn">ഭാഷ</a>
                 <div class="dropdown-content">
-                    <a href="#">English</a>
+                    <a href="/project/index.php">English</a>
                     <a href="#">हिंदी</a>
-                    <a href="index.php">മലയാളം</a>
+                    <a href="index.php">മലയാളം</a> 
                 </div>
             </li>
             
@@ -66,7 +66,7 @@
     </nav>
     <nav class="desktop">
         <ul >
-            <li><a href="">ക്യൂർക്കണെക്റ്റ്</a></li>
+            <li><a style="font-size:80%" href="">ക്യൂർക്കണെക്റ്റ്</a></li>
             <li class="hideOnMobile"><a href="index.php">ഹോം&nbspപേജ്</a></li>
             <li class="hideOnMobile"><a href="#Departments">ശാഖകൾ</a></li>
             <li class="hideOnMobile"><a href="">ഫോറം</a></li>
@@ -78,9 +78,9 @@
             <i class="fa-solid fa-language fa-2x"></i>
         </button>
         <div class="dropdown-content">
-            <a href="/project/">English</a>
+            <a href="/project/index.php">English</a>
             <a href="#">हिंदी</a>
-            <a href="lang/index.php">മലയാളം</a>
+            <a href="index.php">മലയാളം</a>
         </div>
     </li>
             <li class="hideOnMobile"><a href="Patient/Patient_login.html" class="btn"><button class="book">ലോഗിൻ</button></a></li>

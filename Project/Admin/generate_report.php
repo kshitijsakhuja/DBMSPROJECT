@@ -22,13 +22,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Define a base SQL query to use based on the report type
     switch ($reportType) {
-        case 'patient':
+        case 'Patient':
             $sql = "SELECT * FROM users WHERE regDate BETWEEN ? AND ?";
             break;
-        case 'appointment':
+        case 'Appointment':
             $sql = "SELECT * FROM appointment WHERE appointmentDate BETWEEN ? AND ?";
             break;
-        case 'doctor':
+        case 'Doctor':
             $sql = "SELECT * FROM doctors WHERE creationDate BETWEEN ? AND ?";
             break;
         default:

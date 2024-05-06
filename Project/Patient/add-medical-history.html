@@ -146,10 +146,12 @@
                         <input type="text" id="Temperature" name="Temperature" placeholder="Enter Body Temperature">
                       </div><br>
 
-                      <div class="form-group textarea">
+                      <div class="form-group file-upload">
                         <label id="medical-prescription-label" for="medical-prescription">Medical Prescription</label>
-                         <textarea  id="MedicalPres" name="MedicalPres" placeholder="Enter Medical Prescription"></textarea>
-                      </div>
+                        <input type="file" id="MedicalPres" name="MedicalPres" accept=".txt,.pdf,.doc,.docx" />
+                        <small class="form-text text-muted">Upload your medical prescription file (accepted formats: .pdf, .doc, .docx).</small>
+                    </div>
+                    
                       <br>
                       <div class="form-group">
                         <a href="medical-history.html">
